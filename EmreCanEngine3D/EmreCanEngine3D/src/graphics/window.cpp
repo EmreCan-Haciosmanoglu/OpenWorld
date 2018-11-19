@@ -13,6 +13,7 @@ namespace EmreCan3D
 		}
 		Window::~Window()
 		{
+			glfwTerminate();
 		}
 		bool Window::closed() const
 		{
