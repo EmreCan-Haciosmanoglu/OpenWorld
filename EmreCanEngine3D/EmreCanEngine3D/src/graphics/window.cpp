@@ -9,7 +9,8 @@ namespace EmreCan3D
 			m_Title = title;
 			m_Width = width;
 			m_Height = height;
-			init();
+			if(!init())
+				glfwTerminate();
 		}
 		Window::~Window()
 		{
@@ -24,17 +25,23 @@ namespace EmreCan3D
 			glfwPollEvents();
 			glfwSwapBuffers(m_Window);
 		}
-		void Window::init()
+		bool Window::init()
 		{
+			if (!glfwInit())
+			{
+				std::cout << "Failed to initialize GLFW!" << std::endl;
+				return false;
+			}
+
 			m_Window = glfwCreateWindow(m_Width, m_Height,m_Title, NULL,NULL);
 			if (!m_Window)
 			{
-				glfwTerminate();
 				std::cout << "Failed to create GLFW window!" << std::endl;
-				return;
+				return false;
 			}
 			glfwMakeContextCurrent(m_Window);
 
+			return true;
 		}
 	}
 }

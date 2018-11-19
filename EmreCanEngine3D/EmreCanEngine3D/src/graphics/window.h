@@ -19,7 +19,7 @@ namespace EmreCan3D
 			bool closed() const;
 			void update() const;
 		private:
-			void init();
+			bool init();
 		};
 	}
 }
