@@ -20,6 +20,8 @@ namespace EmreCan3D
 		}
 		void Window::update() const
 		{
+			glfwPollEvents();
+			glfwSwapBuffers(m_Window);
 		}
 		void Window::init()
 		{
