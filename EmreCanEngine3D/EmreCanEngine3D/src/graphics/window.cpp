@@ -16,5 +16,8 @@ namespace EmreCan3D
 		void Window::update() const
 		{
 		}
+		void Window::init()
+		{
+		}
 	}
 }
