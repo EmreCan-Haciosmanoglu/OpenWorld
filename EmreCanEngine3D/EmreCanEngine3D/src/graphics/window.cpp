@@ -1,4 +1,5 @@
 #include "window.h"
+
 namespace EmreCan3D
 {
 	namespace graphics
