@@ -6,8 +6,8 @@ namespace EmreCan3D
 		class Window
 		{
 		private:
-			const char *name;
-			int width, height;
+			const char *m_Name;
+			int m_Width, m_Height;
 		public:
 			Window(const char *name, int width, int height);
 			~Window();
