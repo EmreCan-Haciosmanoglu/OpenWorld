@@ -16,9 +16,9 @@ namespace EmreCan3D
 		public:
 			Window(const char *title, int width, int height);
 			~Window();
+			void clear() const;
 			bool closed() const;
 			void update() const;
-			void clear() const;
 		private:
 			bool init();
 		};

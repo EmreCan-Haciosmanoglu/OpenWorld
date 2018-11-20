@@ -20,13 +20,14 @@ namespace EmreCan3D
 		{
 			return glfwWindowShouldClose(m_Window);
 		}
+		void Window::clear() const
+		{
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		}
 		void Window::update() const
 		{
 			glfwPollEvents();
 			glfwSwapBuffers(m_Window);
-		}
-		void Window::clear() const
-		{
 		}
 		bool Window::init()
 		{
