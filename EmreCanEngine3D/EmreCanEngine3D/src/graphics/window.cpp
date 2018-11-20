@@ -18,7 +18,7 @@ namespace EmreCan3D
 		}
 		bool Window::closed() const
 		{
-			return glfwWindowShouldClose(m_Window);
+			return glfwWindowShouldClose(m_Window) == 1;
 		}
 		void Window::clear() const
 		{

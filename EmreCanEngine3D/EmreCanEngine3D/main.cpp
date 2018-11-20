@@ -7,11 +7,11 @@ int main()
 	using namespace graphics;
 
 	Window window("3D Game Engine", 800, 600);
-	//glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
+	glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
 
 	while (!window.closed())
 	{
-		//glClear(GL_COLOR_BUFFER_BIT);
+		window.clear();
 		window.update();
 	}
 	return 0;
