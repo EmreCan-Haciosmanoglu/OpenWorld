@@ -46,7 +46,7 @@ namespace EmreCan3D
 				return false;
 			}
 			glfwMakeContextCurrent(m_Window);
-
+			glfwSetWindowSizeCallback(m_Window,windowResize);
 			return true;
 		}
 
