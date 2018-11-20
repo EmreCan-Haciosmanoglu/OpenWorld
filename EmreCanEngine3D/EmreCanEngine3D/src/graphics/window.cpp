@@ -25,6 +25,9 @@ namespace EmreCan3D
 			glfwPollEvents();
 			glfwSwapBuffers(m_Window);
 		}
+		void Window::clear() const
+		{
+		}
 		bool Window::init()
 		{
 			if (!glfwInit())
