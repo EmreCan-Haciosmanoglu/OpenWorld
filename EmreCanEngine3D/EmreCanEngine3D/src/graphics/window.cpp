@@ -27,6 +27,7 @@ namespace EmreCan3D
 		void Window::update()
 		{
 			glfwPollEvents();
+			glfwGetFramebufferSize(m_Window, &m_Width, &m_Height);
 			glfwSwapBuffers(m_Window);
 		}
 		bool Window::init()
