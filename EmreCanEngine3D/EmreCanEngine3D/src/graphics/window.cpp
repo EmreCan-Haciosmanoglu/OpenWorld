@@ -4,6 +4,8 @@ namespace EmreCan3D
 {
 	namespace graphics
 	{
+		void windowResize(GLFWwindow *window, int width, int height);
+
 		Window::Window(const char * title, int width, int height)
 		{
 			m_Title = title;
@@ -27,8 +29,6 @@ namespace EmreCan3D
 		void Window::update()
 		{
 			glfwPollEvents();
-			glfwGetFramebufferSize(m_Window, &m_Width, &m_Height);
-			glViewport(0, 0, m_Width, m_Height);
 			glfwSwapBuffers(m_Window);
 		}
 		bool Window::init()
@@ -48,6 +48,11 @@ namespace EmreCan3D
 			glfwMakeContextCurrent(m_Window);
 
 			return true;
+		}
+
+		void windowResize(GLFWwindow *window, int width, int height)
+		{
+			glViewport(0, 0, width, height);
 		}
 	}
 }
