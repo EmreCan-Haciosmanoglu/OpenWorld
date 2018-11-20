@@ -19,6 +19,9 @@ namespace EmreCan3D
 			void clear() const;
 			bool closed() const;
 			void update();
+
+			int getWidth() const { return m_Width; }
+			int getHeight() const { return m_Height; }
 		private:
 			bool init();
 		};
