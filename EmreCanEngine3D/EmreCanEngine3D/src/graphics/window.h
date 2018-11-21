@@ -33,9 +33,11 @@ namespace EmreCan3D
 			inline int getHeight() const { return m_Height; }
 
 			static bool isKeyPressed(unsigned int keycode);
+			static bool isMouseButtonPressed(unsigned int button);
 		private:
 			bool init();
 			static void key_callback(GLFWwindow * window, int key, int scancode, int action, int mods);
+			static void mouse_button_callback(GLFWwindow * window, int button, int action, int mods);
 		};
 	}
 }

@@ -45,6 +45,10 @@ namespace EmreCan3D
 
 			return (keycode < MAX_KEYS) ? Window::m_Keys[keycode] : /*TODO: Log this*/false;
 		}
+		bool Window::isMouseButtonPressed(unsigned int button)
+		{
+			return (button < MAX_BUTTONS) ? Window::m_MouseButtons[button] : /*TODO: Log this*/false;
+		}
 		bool Window::init()
 		{
 			if (!glfwInit())
@@ -63,6 +67,7 @@ namespace EmreCan3D
 			glfwSetWindowUserPointer(m_Window, this);
 			glfwSetWindowSizeCallback(m_Window, window_resize);
 			glfwSetKeyCallback(m_Window, key_callback);
+			glfwSetMouseButtonCallback(m_Window, mouse_button_callback);
 
 			std::cout << "OpenGL : " << glGetString(GL_VERSION) << std::endl;
 
@@ -78,6 +83,11 @@ namespace EmreCan3D
 		void Window::key_callback(GLFWwindow * window, int key, int scancode, int action, int mods)
 		{
 			Window::m_Keys[key] = action != GLFW_RELEASE;
+		}
+
+		void Window::mouse_button_callback(GLFWwindow * window, int button, int action, int mods)
+		{
+			Window::m_MouseButtons[button] = action != GLFW_RELEASE;
 		}
 
 		void window_resize(GLFWwindow *window, int width, int height)
