@@ -12,12 +12,16 @@ int main()
 	while (!window.closed())
 	{
 		window.clear();
-		glBegin(GL_TRIANGLES);
+#if 1
+		glBegin(GL_QUADS);
 		glVertex2f(-0.5f, -0.5f);
-		glVertex2f(0.0f, 0.5f);
 		glVertex2f(0.5f, -0.5f);
+		glVertex2f(0.5f, 0.5f);
+		glVertex2f(-0.5f, 0.5f);
 		glEnd();
-
+#else
+		//do something
+#endif
 		window.update();
 	}
 	return 0;
