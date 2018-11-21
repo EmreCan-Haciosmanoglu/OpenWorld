@@ -48,6 +48,8 @@ namespace EmreCan3D
 			glfwMakeContextCurrent(m_Window);
 			glfwSetWindowSizeCallback(m_Window,windowResize);
 
+			std::cout << "OpenGL : " << glGetString(GL_VERSION) << std::endl;
+
 			if (glewInit() != GLEW_OK)
 			{
 				std::cout << "Could not initialize GLEW!" << std::endl;
