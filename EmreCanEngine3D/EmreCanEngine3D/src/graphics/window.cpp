@@ -68,6 +68,7 @@ namespace EmreCan3D
 			glfwSetWindowSizeCallback(m_Window, window_resize);
 			glfwSetKeyCallback(m_Window, key_callback);
 			glfwSetMouseButtonCallback(m_Window, mouse_button_callback);
+			glfwSetCursorPosCallback(m_Window, cursor_position_callback);
 
 			std::cout << "OpenGL : " << glGetString(GL_VERSION) << std::endl;
 
@@ -88,6 +89,12 @@ namespace EmreCan3D
 		void Window::mouse_button_callback(GLFWwindow * window, int button, int action, int mods)
 		{
 			Window::m_MouseButtons[button] = action != GLFW_RELEASE;
+		}
+
+		void Window::cursor_position_callback(GLFWwindow * window, double xpos, double ypos)
+		{
+			Window::m_MouseX = xpos;
+			Window::m_MouseY = ypos;
 		}
 
 		void window_resize(GLFWwindow *window, int width, int height)
