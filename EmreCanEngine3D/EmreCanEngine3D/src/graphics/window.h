@@ -7,8 +7,16 @@ namespace EmreCan3D
 {
 	namespace graphics
 	{
+
+#define MAX_KEYS	1024
+#define MAX_BUTTONS	32
+
 		class Window
 		{
+		public:
+			static bool m_Keys[MAX_KEYS];
+			static bool m_MouseButtons[MAX_BUTTONS];
+			static double m_MouseX, m_MouseY;
 		private:
 			const char *m_Title;
 			int m_Width, m_Height;
@@ -23,8 +31,11 @@ namespace EmreCan3D
 
 			inline int getWidth() const { return m_Width; }
 			inline int getHeight() const { return m_Height; }
+
+			static bool isKeyPressed(unsigned int keycode);
 		private:
 			bool init();
+			static void key_callback(GLFWwindow * window, int key, int scancode, int action, int mods);
 		};
 	}
 }

@@ -4,7 +4,12 @@ namespace EmreCan3D
 {
 	namespace graphics
 	{
-		void windowResize(GLFWwindow *window, int width, int height);
+		bool Window::m_Keys[MAX_KEYS];
+		bool Window::m_MouseButtons[MAX_BUTTONS];
+		double Window::m_MouseX;
+		double Window::m_MouseY;
+
+		void window_resize(GLFWwindow *window, int width, int height);
 
 		Window::Window(const char * title, int width, int height)
 		{
@@ -13,6 +18,10 @@ namespace EmreCan3D
 			m_Height = height;
 			if(!init())
 				glfwTerminate();
+			for (bool key : Window::m_Keys)
+				key = false;
+			for (bool button : Window::m_MouseButtons)
+				button = false;
 		}
 		Window::~Window()
 		{
@@ -31,6 +40,11 @@ namespace EmreCan3D
 			glfwPollEvents();
 			glfwSwapBuffers(m_Window);
 		}
+		bool Window::isKeyPressed(unsigned int keycode)
+		{
+
+			return (keycode < MAX_KEYS) ? Window::m_Keys[keycode] : /*TODO: Log this*/false;
+		}
 		bool Window::init()
 		{
 			if (!glfwInit())
@@ -46,7 +60,9 @@ namespace EmreCan3D
 				return false;
 			}
 			glfwMakeContextCurrent(m_Window);
-			glfwSetWindowSizeCallback(m_Window,windowResize);
+			glfwSetWindowUserPointer(m_Window, this);
+			glfwSetWindowSizeCallback(m_Window, window_resize);
+			glfwSetKeyCallback(m_Window, key_callback);
 
 			std::cout << "OpenGL : " << glGetString(GL_VERSION) << std::endl;
 
@@ -59,7 +75,12 @@ namespace EmreCan3D
 			return true;
 		}
 
-		void windowResize(GLFWwindow *window, int width, int height)
+		void Window::key_callback(GLFWwindow * window, int key, int scancode, int action, int mods)
+		{
+			Window::m_Keys[key] = action != GLFW_RELEASE;
+		}
+
+		void window_resize(GLFWwindow *window, int width, int height)
 		{
 			glViewport(0, 0, width, height);
 		}
