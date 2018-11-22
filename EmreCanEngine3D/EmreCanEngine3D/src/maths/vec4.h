@@ -15,10 +15,10 @@ namespace EmreCan3D
 			vec4& multiply(const vec4& other);
 			vec4& devide(const vec4& other);
 
-			friend vec4& operator+(vec4& left, const vec4& right);
-			friend vec4& operator-(vec4& left, const vec4& right);
-			friend vec4& operator*(vec4& left, const vec4& right);
-			friend vec4& operator/(vec4& left, const vec4& right);
+			friend vec4& operator+(vec4 left, const vec4& right);
+			friend vec4& operator-(vec4 left, const vec4& right);
+			friend vec4& operator*(vec4 left, const vec4& right);
+			friend vec4& operator/(vec4 left, const vec4& right);
 
 			vec4& operator+=(const vec4& other);
 			vec4& operator-=(const vec4& other);
