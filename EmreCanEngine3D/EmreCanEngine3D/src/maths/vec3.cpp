@@ -69,7 +69,7 @@ namespace EmreCan3D
 		{
 			return !(*this == other);
 		}
-		vec3 & operator+(vec3 left, const vec3& right)
+		vec3 operator+(vec3 left, const vec3& right)
 		{
 			return left.add(right);
 		}

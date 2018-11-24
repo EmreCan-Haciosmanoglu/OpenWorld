@@ -1,5 +1,7 @@
 ﻿#include "mat4.h"
+#include "maths.h"
 #define LENGTH 4*4
+
 namespace EmreCan3D
 {
 	namespace maths
@@ -43,6 +45,8 @@ namespace EmreCan3D
 					}
 				}
 			}
+
+			return *this;
 		}
 
 		mat4  operator*(mat4 left, const mat4 & right)
@@ -70,26 +74,73 @@ namespace EmreCan3D
 			return result;
 		}
 
-		mat4  mat4::perspective(float fow, float aspectRatio, float near, float far)
+		mat4  mat4::perspective(float fov, float aspectRatio, float near, float far)
 		{
 			mat4 result(1.0f);
 
+			float q = 1.0f / tan(toRadians(0.5 * fov));
+			float a = q / aspectRatio;
+
+			float b = (near + far) / (near - far);
+			float c = (2 * near * far) / (near - far);
+
+			result.elements[0 + 0 * 4] = a;
+			result.elements[1 + 1 * 4] = q;
+			result.elements[2 + 2 * 4] = b;
+			result.elements[3 + 2 * 4] = -1.0f;
+			result.elements[2 + 3 * 4] = c;
+			
 			return result;
 		}
 
 		mat4  mat4::translation(const vec3 & translation)
 		{
-			return mat4();
+			mat4 result(1.0f);
+
+			result.elements[0 + 3 * 4] = translation.x;
+			result.elements[1 + 3 * 4] = translation.y;
+			result.elements[2 + 3 * 4] = translation.z;
+
+			return result;
 		}
 
 		mat4  mat4::ratation(float angle, const vec3 & axis)
 		{
-			return mat4();
+			mat4 result(1.0f);
+
+			float r = toRadians(angle);
+			float c = cos(r);
+			float s = sin(r);
+			float omc = 1.0f - c;
+
+			float x = axis.x;
+			float y = axis.y;
+			float z = axis.z;
+
+			result.elements[0 + 0 * 4] = x * omc + c;
+			result.elements[1 + 0 * 4] = y * x * omc + z * s;
+			result.elements[2 + 0 * 4] = x * z * omc - y * s;
+
+			result.elements[0 + 1 * 4] = x * y * omc - z * s;
+			result.elements[1 + 1 * 4] = y * omc + c;
+			result.elements[2 + 1 * 4] = y * z * omc + x * s;
+
+			result.elements[0 + 1 * 4] = x * z * omc + y * s;
+			result.elements[1 + 1 * 4] = y * z * omc - x * s;
+			result.elements[2 + 1 * 4] = z * omc + c;
+
+			return result;
 		}
 
 		mat4  mat4::scale(const vec3 & scale)
 		{
-			return mat4();
+			mat4 result(1.0f);
+
+			result.elements[0 + 0 * 4] = scale.x;
+			result.elements[1 + 1 * 4] = scale.y;
+			result.elements[2 + 2 * 4] = scale.z;
+
+			return result;
 		}
 	}
 }
