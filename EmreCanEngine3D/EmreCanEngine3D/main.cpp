@@ -1,5 +1,6 @@
 #include "src/graphics/window.h"
 #include "src/maths/maths.h"
+#include "src/utils/fileutils.h"
 
 int main()
 {
@@ -9,11 +10,7 @@ int main()
 
 	Window window("3D Game Engine", 800, 600);
 	glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
-	vec2 a(2, 3);
-	vec2 b(6, 35);
-	vec2 c = a + b;
 
-	std::cout << c  << " - " << (a != b) << std::endl;
 
 	while (!window.closed())
 	{
