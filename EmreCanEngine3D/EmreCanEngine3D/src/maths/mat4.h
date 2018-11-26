@@ -9,7 +9,11 @@ namespace EmreCan3D
 	{
 		struct mat4
 		{
-			float elements[4 * 4];
+			union
+			{
+				float elements[4 * 4];
+				vec4 columns[4];
+			};
 			mat4();
 			mat4(float diagoal);
 
