@@ -41,6 +41,9 @@ int main()
 	while (!window.closed())
 	{
 		window.clear();
+		double x, y;
+		window.getMousePosition(x, y);
+		shader.setUniform2f("light_pos", vec2((float)(x * 16.0f / 960.0f),(float)(9.0f - y * 9.0f / 540.0f)));
 		glDrawArrays(GL_TRIANGLES, 0, 6);
 		window.update();
 	}

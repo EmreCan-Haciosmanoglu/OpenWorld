@@ -40,9 +40,13 @@ namespace EmreCan3D
 			glfwPollEvents();
 			glfwSwapBuffers(m_Window);
 		}
+		void Window::getMousePosition(double & x, double & y)
+		{
+			x = m_MouseX;
+			y = m_MouseY;
+		}
 		bool Window::isKeyPressed(unsigned int keycode)
 		{
-
 			return (keycode < MAX_KEYS) ? Window::m_Keys[keycode] : /*TODO: Log this*/false;
 		}
 		bool Window::isMouseButtonPressed(unsigned int button)
