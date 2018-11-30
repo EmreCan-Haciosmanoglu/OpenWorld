@@ -37,6 +37,10 @@ namespace EmreCan3D
 		}
 		void Window::update()
 		{
+			GLenum error = glGetError();
+			if (error != GL_NO_ERROR)
+				std::cout << "OpenGl Error: " << error << std::endl;
+
 			glfwPollEvents();
 			glfwSwapBuffers(m_Window);
 		}
