@@ -36,7 +36,7 @@ namespace EmreCan3D
 					size.x,size.y,0,
 					size.x,0,0
 				};
-				GLfloat vertices[] =
+				GLfloat colors[] =
 				{
 					color.x,color.y,color.z,color.w,
 					color.x,color.y,color.z,color.w,
@@ -45,7 +45,7 @@ namespace EmreCan3D
 				};
 
 				m_VertexArray->addBuffers(new Buffer(vertices, 4 * 3, 3), 0);
-				m_VertexArray->addBuffers(new Buffer(color, 4 * 4, 4), 1);
+				m_VertexArray->addBuffers(new Buffer(colors, 4 * 4, 4), 1);
 
 				GLushort indices[] = {0,1,2,2,3,0};
 				m_IndexBuffer = new IndexBuffer(indices, 6);
