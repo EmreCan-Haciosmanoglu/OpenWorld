@@ -4,6 +4,7 @@
 #include "buffers/vertexarray.h"
 
 #include "../maths/maths.h"
+#include "shader.h"
 
 namespace EmreCan3D
 {
@@ -18,19 +19,22 @@ namespace EmreCan3D
 
 			VertexArray* m_VertexArray;
 			IndexBuffer* m_IndexBuffer;
-		protected:
-			Renderable2D(maths::vec3 pos, maths::vec2 size, maths::vec4 color)
+
+			Shader& m_Shader;
+		public:
+			Renderable2D(maths::vec3 pos, maths::vec2 size, maths::vec4 color,Shader& shader)
 				:m_Position(pos)
 				, m_Size(size)
 				, m_Color(color)
+				,m_Shader(shader)
 			{
 				m_VertexArray = new VertexArray();
 				GLfloat vertices[] =
 				{
 					0,0,0,
-					0, pos.y,0,
-					pos.x,pos.y,0,
-					pos.x,0,0
+					0, size.y,0,
+					size.x,size.y,0,
+					size.x,0,0
 				};
 				GLfloat vertices[] =
 				{
@@ -53,6 +57,10 @@ namespace EmreCan3D
 				delete m_IndexBuffer;
 			}
 
+			inline const VertexArray* getVAO() const { return m_VertexArray; }
+			inline const IndexBuffer* getIBO() const { return m_IndexBuffer; }
+
+			inline Shader& getShader() const { return m_Shader; }
 
 			inline const maths::vec3& getPosition() const { return m_Position; }
 			inline const maths::vec2& getSize() const { return m_Size; }
