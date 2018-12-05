@@ -12,6 +12,8 @@ namespace EmreCan3D
 		{
 			for (int i = 0; i < m_Buffers.size(); i++)
 				delete m_Buffers[i];
+
+			glDeleteBuffers(1, &m_ArrayID);
 		}
 		void VertexArray::addBuffers(Buffer * buffer, GLuint index)
 		{

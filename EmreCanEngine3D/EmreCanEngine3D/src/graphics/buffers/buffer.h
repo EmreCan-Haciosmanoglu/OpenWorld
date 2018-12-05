@@ -14,7 +14,7 @@ namespace EmreCan3D
 			GLuint m_ComponentCount;
 		public:
 			Buffer(GLfloat *data, GLsizei count, GLuint componentCount);
-
+			~Buffer();
 			void bind() const;
 			void unbind() const;
 
