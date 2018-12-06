@@ -258,4 +258,7 @@ paket-files/
 
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
-*.pyc
+*.pycEmreCanEngine3D\Dependencies\GLEW\include\GL\eglew.h 
+EmreCanEngine3D\Dependencies\GLEW\include\GL\glxew.h 
+EmreCanEngine3D\Dependencies\GLEW\include\GL\wglew.h 
+/EmreCanEngine3D/Dependencies/GLEW/include/GL

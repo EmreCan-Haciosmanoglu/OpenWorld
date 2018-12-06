@@ -14,7 +14,7 @@ namespace EmreCan3D
 		}
 		void BatchRenderer2D::submit(const Renderable2D * renderable)
 		{
-
+			 
 		}
 		void BatchRenderer2D::flush()
 		{
