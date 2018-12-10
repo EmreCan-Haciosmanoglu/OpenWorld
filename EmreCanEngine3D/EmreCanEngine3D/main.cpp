@@ -9,6 +9,8 @@
 #include "src/graphics/renderer2d.h"
 #include "src/graphics/simple2drenderer.h"
 
+#include "src/graphics/static_sprite.h"
+
 int main()
 {
 	using namespace EmreCan3D;
@@ -29,8 +31,8 @@ int main()
 	//shader.setUniformMat4("ml_matrix", mat4::translate(vec3(2, 2, 0)));
 	//shader.setUniformMat4("ml_matrix", mat4::rotate(45.0f, vec3(0, 0, 1)));
 
-	Renderable2D sprite1(maths::vec3(5, 5, 0), maths::vec2(4, 4), maths::vec4(1, 0, 1, 1), shader);
-	Renderable2D sprite2(maths::vec3(7, 1, 0), maths::vec2(2, 2), maths::vec4(0, 0, 1, 1), shader);
+	StaticSprite sprite1(5,5,4,4, maths::vec4(1, 0, 1, 1), shader);
+	StaticSprite sprite2(7,1,2,2, maths::vec4(0, 0, 1, 1), shader);
 	Simple2DRenderer renderer;
 
 	shader.setUniform2f("light_pos", vec2(8.0f, 4.0f));

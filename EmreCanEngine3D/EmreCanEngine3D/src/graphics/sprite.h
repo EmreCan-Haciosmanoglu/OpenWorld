@@ -9,8 +9,7 @@ namespace EmreCan3D
 		class Sprite : public Renderable2D
 		{
 		public:
-			Sprite();
-			~Sprite();
+			Sprite(float x, float y, float width, float height, const maths::vec4& color, Shader& shader);
 
 		private:
 
