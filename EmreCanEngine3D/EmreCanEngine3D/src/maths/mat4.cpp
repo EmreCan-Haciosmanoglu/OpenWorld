@@ -34,6 +34,7 @@ namespace EmreCan3D
 
 		mat4 &  mat4::multiply(const mat4 & other)
 		{
+			float data[16];
 			for (int y = 0; y < 4; y++)
 			{
 				for (int x = 0; x < 4; x++)
@@ -43,9 +44,11 @@ namespace EmreCan3D
 					{
 						sum += elements[x + e * 4] * other.elements[e + y * 4];
 					}
-					elements[x + y * 4] = sum;
+					data[x + y * 4] = sum;
 				}
 			}
+
+			memcpy(elements, data, 16 * 4);
 
 			return *this;
 		}
