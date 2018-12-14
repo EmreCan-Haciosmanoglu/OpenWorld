@@ -10,7 +10,7 @@ namespace EmreCan3D
 			,m_ProjectionMatrix(projectionMatrix)
 		{
 			m_Shader->enable();
-			m_Shader->setUniformMat4("pr_matr", m_ProjectionMatrix);
+			m_Shader->setUniformMat4("pr_matrix", m_ProjectionMatrix);
 			m_Shader->disable();
 		}
 		Layer::~Layer()
@@ -28,10 +28,14 @@ namespace EmreCan3D
 		void Layer::render()
 		{
 			m_Shader->enable();
+
+			m_Renderer->begin();
 			for (const Renderable2D* renderable : m_Renderables)
 				m_Renderer->submit(renderable);
+			m_Renderer->end();
+
 			m_Renderer->flush();
-			m_Shader->disable();
+			// m_Shader->disable();
 		}
 	}
 }
