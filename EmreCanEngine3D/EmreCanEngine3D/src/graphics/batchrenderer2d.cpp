@@ -1,4 +1,6 @@
 #include "batchrenderer2d.h"
+//#include "renderable2d.h"
+
 namespace EmreCan3D
 {
 	namespace graphics
