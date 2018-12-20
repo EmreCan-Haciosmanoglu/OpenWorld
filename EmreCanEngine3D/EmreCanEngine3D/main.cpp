@@ -19,6 +19,7 @@
 #include "src/graphics/layers/group.h"
 
 #include <time.h>
+#include <FreeImage.h>
 
 #define RENDER_50K 0
 int main()
