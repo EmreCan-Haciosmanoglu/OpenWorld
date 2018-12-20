@@ -12,6 +12,8 @@
 
 #include "src/graphics/static_sprite.h"
 #include "src/graphics/sprite.h"
+#include "src/graphics/texture.h"
+
 #include "src/utils/timer.h"
 
 #include "src/graphics/layers/tilelayer.h"
@@ -19,7 +21,6 @@
 #include "src/graphics/layers/group.h"
 
 #include <time.h>
-#include <FreeImage.h>
 
 #define RENDER_50K 0
 int main()
