@@ -145,4 +145,12 @@
     <None Include="src\shaders\basic.vert" />
     <None Include="src\shaders\basic.frag" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Test.png">
+      <Filter>Kaynak Dosyaları</Filter>
+    </Image>
+    <Image Include="Test2.png">
+      <Filter>Kaynak Dosyaları</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

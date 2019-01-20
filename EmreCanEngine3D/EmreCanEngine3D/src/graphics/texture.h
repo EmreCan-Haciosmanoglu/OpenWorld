@@ -1,9 +1,9 @@
 #pragma once
 
-#include <FreeImage.h> 
 #include <string>
 #include <GL/glew.h>
 #include "../utils/imageload.h"
+#include <FreeImage.h> 
 
 namespace EmreCan3D
 {
@@ -20,7 +20,8 @@ namespace EmreCan3D
 			~Texture();
 			void bind() const;
 			void unbind() const;
-
+			
+			inline const GLuint getID() const { return m_TID; }
 			inline const GLsizei getWidth() const { return m_Width; }
 			inline const GLsizei getHeight() const { return m_Height; }
 		private:

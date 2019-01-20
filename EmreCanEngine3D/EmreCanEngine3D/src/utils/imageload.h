@@ -1,7 +1,7 @@
 #pragma once
 
-#include <FreeImage.h>
 #include <GL/glew.h>
+#include <FreeImage.h>
 
 namespace EmreCan3D
 {
