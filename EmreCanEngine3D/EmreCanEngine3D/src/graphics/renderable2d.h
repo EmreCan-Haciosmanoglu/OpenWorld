@@ -29,7 +29,7 @@ namespace EmreCan3D
 			std::vector<maths::vec2> m_UV;
 			Texture* m_Texture;
 		protected:
-			Renderable2D() 
+			Renderable2D() :m_Texture(nullptr)
 			{
 				setUVDefaults();
 			}
@@ -38,6 +38,7 @@ namespace EmreCan3D
 				:m_Position(pos)
 				, m_Size(size)
 				, m_Color(color)
+				, m_Texture(nullptr)
 			{
 				setUVDefaults();
 			}
