@@ -13,6 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Kaynak Dosyaları\ext">
+      <UniqueIdentifier>{2f4f0cd7-84e3-4531-be48-aabe82338382}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kaynak Dosyaları\ext\freetype">
+      <UniqueIdentifier>{3e6d1c22-f619-41ab-bcc7-6a5a8d3e013f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kaynak Dosyaları\ext\freetype\FT_MODULES">
+      <UniqueIdentifier>{6822a446-d05a-4ce1-a4b5-4053a7dd8dc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\ext">
+      <UniqueIdentifier>{5b649175-2368-4eb2-b8cd-a5e350bee351}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\ext\freetype">
+      <UniqueIdentifier>{feb9395e-a429-49c8-9490-b26ab69308b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kaynak Dosyaları\ext\freetype-gl">
+      <UniqueIdentifier>{2bc85e11-ff6d-4a2d-8284-d0f44114961a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\ext\freetype-gl">
+      <UniqueIdentifier>{d8836e7f-2591-4431-862a-78511d923927}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -68,6 +89,156 @@
     </ClCompile>
     <ClCompile Include="src\graphics\texture.cpp">
       <Filter>Kaynak Dosyalar</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\autofit\autofit.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\bdf\bdf.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\cff\cff.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftbase.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftbitmap.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\cache\ftcache.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftdebug.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftfstype.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftgasp.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftglyph.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\gzip\ftgzip.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftinit.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\lzw\ftlzw.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftstroke.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftsystem.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\smooth\smooth.c">
+      <Filter>Kaynak Dosyaları\ext\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftbbox.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftgxval.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftlcdfil.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftmm.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftotval.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftpatent.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftpfr.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftsynth.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\fttype1.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftwinfnt.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\pcf\pcf.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\pfr\pfr.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\psaux\psaux.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\pshinter\pshinter.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\psnames\psmodule.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\raster\raster.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\sfnt\sfnt.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\truetype\truetype.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\type1\type1.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\type42\type42.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\winfonts\winfnt.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\cid\type1cid.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype\src\base\ftxf86.c">
+      <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype-gl\distance-field.c">
+      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype-gl\edtaa3func.c">
+      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype-gl\font-manager.c">
+      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype-gl\platform.c">
+      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype-gl\text-buffer.c">
+      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype-gl\texture-atlas.c">
+      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype-gl\texture-font.c">
+      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype-gl\utf8-utils.c">
+      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype-gl\vector.c">
+      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype-gl\vertex-attribute.c">
+      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
+    </ClCompile>
+    <ClCompile Include="ext\freetype-gl\vertex-buffer.c">
+      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +310,327 @@
     </ClInclude>
     <ClInclude Include="src\utils\imageload.h">
       <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\ft2build.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\config\ftconfig.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\config\ftheader.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\config\ftmodule.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\config\ftoption.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\config\ftstdlib.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svbdf.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svcfftl.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svcid.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svfntfmt.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svgldict.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svgxval.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svkern.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svmetric.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svmm.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svotval.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svpfr.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svpostnm.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svprop.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svpscmap.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svpsinfo.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svsfnt.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svttcmap.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svtteng.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svttglyf.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\services\svwinfnt.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\autohint.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\cffotypes.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\cfftypes.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\ftcalc.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\ftdebug.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\ftdrv.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\ftgloadr.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\fthash.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\ftmemory.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\ftobjs.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\ftpic.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\ftpsprop.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\ftrfork.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\ftserv.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\ftstream.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\fttrace.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\ftvalid.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\internal.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\psaux.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\pshints.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\sfnt.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\t1types.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\internal\tttypes.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\freetype.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftadvanc.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftbbox.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftbdf.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftbitmap.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftbzip2.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftcache.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftchapters.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftcid.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftdriver.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\fterrdef.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\fterrors.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftfntfmt.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftgasp.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftglyph.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftgxval.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftgzip.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftimage.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftincrem.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftlcdfil.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftlist.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftlzw.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftmac.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftmm.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftmodapi.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftmoderr.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftotval.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftoutln.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftparams.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftpfr.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftrender.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftsizes.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftsnames.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftstroke.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftsynth.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftsystem.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\fttrigon.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\fttypes.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ftwinfnt.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\t1tables.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\ttnameid.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\tttables.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype\include\freetype\tttags.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype-gl\distance-field.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype-gl\edtaa3func.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype-gl\font-manager.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype-gl\freetype-gl.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype-gl\markup.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype-gl\opengl.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype-gl\platform.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype-gl\text-buffer.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype-gl\texture-atlas.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype-gl\texture-font.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype-gl\utf8-utils.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype-gl\vec234.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype-gl\vector.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype-gl\vertex-attribute.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
+    </ClInclude>
+    <ClInclude Include="ext\freetype-gl\vertex-buffer.h">
+      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
