@@ -30,8 +30,8 @@ namespace EmreCan3D
 			m_Shader->enable();
 			m_Renderer->begin();
 
-			//for (const Renderable2D* renderable : m_Renderables)
-			//	renderable->submit(m_Renderer);
+			for (const Renderable2D* renderable : m_Renderables)
+				renderable->submit(m_Renderer);
 
 			m_Renderer->drawString("Hello!", maths::vec3(0, 0, 0),80,maths::vec4(1,1,1,1));
 

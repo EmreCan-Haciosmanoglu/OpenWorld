@@ -32,7 +32,7 @@ int main()
 	using namespace maths;
 
 	Window window("3D Game Engine", 960, 540);
-	glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
+	//glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
 
 	mat4 ortho = mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0, -1.0f, 1.0f);
 
@@ -78,6 +78,8 @@ int main()
 		shader.setUniform2f("light_pos", vec2((float)(x * 32.0f / window.getWidth() - 16.0f), (float)(9.0f - y * 18.0f / window.getHeight())));
 		layer1.render();
 
+		if (Window::isMouseButtonTyped(GLFW_MOUSE_BUTTON_1))
+			std::cout << '1' << std::endl;
 
 		window.update();
  		frames++;
