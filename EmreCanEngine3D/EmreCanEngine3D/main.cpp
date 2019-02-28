@@ -32,7 +32,7 @@ int main()
 	using namespace maths;
 
 	Window window("3D Game Engine", 960, 540);
-	//glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
+	glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
 
 	mat4 ortho = mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0, -1.0f, 1.0f);
 

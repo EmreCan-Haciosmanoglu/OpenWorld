@@ -31,7 +31,7 @@ namespace EmreCan3D
 			float ts = 0.0f;
 			if (tid > 0)
 			{
-				bool found = false; 
+				bool found = false;
 				for (int i = 0; i < m_TextureSlots.size(); i++)
 				{
 					if ((int)m_TextureSlots[i] == (int)tid)
@@ -55,15 +55,12 @@ namespace EmreCan3D
 					ts = (float)(m_TextureSlots.size());
 				}
 			}
-			else
-			{
-				int r = color.x * 255.0f;
-				int g = color.y * 255.0f;
-				int b = color.z * 255.0f;
-				int a = color.w * 255.0f;
+			int r = color.x * 255.0f;
+			int g = color.y * 255.0f;
+			int b = color.z * 255.0f;
+			int a = color.w * 255.0f;
 
-				c = a << 24 | b << 16 | g << 8 | r;
-			}
+			c = a << 24 | b << 16 | g << 8 | r;
 
 			m_Buffer->vertex = *m_TransformationBack * position;
 			m_Buffer->uv = uv[0];
@@ -91,6 +88,99 @@ namespace EmreCan3D
 
 			m_IndexCount += 6;
 		}
+		void BatchRenderer2D::drawString(const std::string& text, const maths::vec3& position, unsigned int fontSize, const maths::vec4& color)
+		{
+			using namespace ftgl;
+			m_FTFont->size = fontSize;
+
+			int r = color.x * 255.0f;
+			int g = color.y * 255.0f;
+			int b = color.z * 255.0f;
+			int a = color.w * 255.0f;
+
+			unsigned int cl =  a << 24 | b << 16 | g << 8 | r;;
+
+			float ts = 0.0f;
+			bool found = false;
+			for (int i = 0; i < m_TextureSlots.size(); i++)
+			{
+				if (m_TextureSlots[i] == m_FTAtlas->id)
+				{
+					ts = (float)(i + 1);
+					found = true;
+					break;
+				}
+			}
+			if (!found)
+			{
+				if (m_TextureSlots.size() >= 32)
+				{
+					end();
+					flush();
+					begin();
+					//m_TextureSlots.empty();
+					//m_TextureSlots.clear();
+				}
+				m_TextureSlots.push_back(m_FTAtlas->id);
+				ts = (float)(m_TextureSlots.size());
+			}
+
+			float scaleX = 960.0f / 32.0f;
+			float scaleY = 540.0f / 18.0f;
+
+			float x = position.x;
+			float y = position.y;
+			for (int i = 0; i < text.length(); i++)
+			{
+				char c = text.at(i);
+				texture_glyph_t* glyph = texture_font_get_glyph(m_FTFont, c);
+				if (glyph != NULL)
+				{
+					if (i > 0)
+					{
+						float kerning = texture_glyph_get_kerning(glyph, text[i - 1]);
+						x += kerning / scaleX;
+					}
+
+					float x0 = x + glyph->offset_x / scaleX;
+					float y0 = position.y + glyph->offset_y / scaleY;
+					float x1 = x0 + glyph->width / scaleX;
+					float y1 = y0 - glyph->height / scaleY;
+
+					float s0 = glyph->s0;
+					float t0 = glyph->t0;
+					float s1 = glyph->s1;
+					float t1 = glyph->t1;
+
+					m_Buffer->vertex = *m_TransformationBack  *   maths::vec3(x0, y0, 0);
+					m_Buffer->uv = maths::vec2(s0, t0);
+					m_Buffer->tid = ts;
+					m_Buffer->color = cl;
+					m_Buffer++;
+
+					m_Buffer->vertex = *m_TransformationBack  *   maths::vec3(x0, y1, 0);
+					m_Buffer->uv = maths::vec2(s0, t1);
+					m_Buffer->tid = ts;
+					m_Buffer->color = cl;
+					m_Buffer++;
+
+					m_Buffer->vertex = *m_TransformationBack  *   maths::vec3(x1, y1, 0);
+					m_Buffer->uv = maths::vec2(s1, t1);
+					m_Buffer->tid = ts;
+					m_Buffer->color = cl;
+					m_Buffer++;
+
+					m_Buffer->vertex = *m_TransformationBack  *   maths::vec3(x1, y0, 0);
+					m_Buffer->uv = maths::vec2(s1, t0);
+					m_Buffer->tid = ts;
+					m_Buffer->color = cl;
+					m_Buffer++;
+
+					m_IndexCount += 6;
+					x += glyph->advance_x / scaleX;
+				}
+			}
+		}
 		void BatchRenderer2D::end()
 		{
 			glUnmapBuffer(GL_ARRAY_BUFFER);
@@ -101,7 +191,7 @@ namespace EmreCan3D
 			for (int i = 0; i < m_TextureSlots.size(); i++)
 			{
 				glActiveTexture(GL_TEXTURE0 + i);
-				glBindTexture(GL_TEXTURE_2D, m_TextureSlots[i]); 
+				glBindTexture(GL_TEXTURE_2D, m_TextureSlots[i]);
 			}
 
 			glBindVertexArray(m_VAO);
@@ -128,10 +218,10 @@ namespace EmreCan3D
 			glEnableVertexAttribArray(SHADER_TID_INDEX);
 			glEnableVertexAttribArray(SHADER_COLOR_INDEX);
 
-			glVertexAttribPointer(SHADER_VERTEX_INDEX	, 3, GL_FLOAT			, GL_FALSE	, RENDERER_VERTEX_SIZE, (const GLvoid*)(0));
-			glVertexAttribPointer(SHADER_UV_INDEX		, 2, GL_FLOAT			, GL_FALSE	, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, VertexData::uv)));
-			glVertexAttribPointer(SHADER_TID_INDEX		, 1, GL_FLOAT			, GL_FALSE	, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, VertexData::tid)));
-			glVertexAttribPointer(SHADER_COLOR_INDEX	, 4, GL_UNSIGNED_BYTE	, GL_TRUE	, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, VertexData::color)));
+			glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(0));
+			glVertexAttribPointer(SHADER_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, VertexData::uv)));
+			glVertexAttribPointer(SHADER_TID_INDEX, 1, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, VertexData::tid)));
+			glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_UNSIGNED_BYTE, GL_TRUE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, VertexData::color)));
 
 			glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -153,6 +243,9 @@ namespace EmreCan3D
 
 			m_IBO = new IndexBuffer(indices, RENDERER_INDICES_SIZE);
 			glBindVertexArray(0);
+
+			m_FTAtlas = ftgl::texture_atlas_new(512, 512, 2);
+			m_FTFont = ftgl::texture_font_new_from_file(m_FTAtlas, 20, "arial.ttf");
 		}
 	}
 }

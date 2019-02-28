@@ -207,19 +207,7 @@
     <ClCompile Include="ext\freetype\src\base\ftxf86.c">
       <Filter>Kaynak Dosyaları\ext\freetype\FT_MODULES</Filter>
     </ClCompile>
-    <ClCompile Include="ext\freetype-gl\distance-field.c">
-      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
-    </ClCompile>
-    <ClCompile Include="ext\freetype-gl\edtaa3func.c">
-      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
-    </ClCompile>
-    <ClCompile Include="ext\freetype-gl\font-manager.c">
-      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
-    </ClCompile>
     <ClCompile Include="ext\freetype-gl\platform.c">
-      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
-    </ClCompile>
-    <ClCompile Include="ext\freetype-gl\text-buffer.c">
       <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
     </ClCompile>
     <ClCompile Include="ext\freetype-gl\texture-atlas.c">
@@ -228,17 +216,11 @@
     <ClCompile Include="ext\freetype-gl\texture-font.c">
       <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
     </ClCompile>
-    <ClCompile Include="ext\freetype-gl\utf8-utils.c">
-      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
-    </ClCompile>
     <ClCompile Include="ext\freetype-gl\vector.c">
       <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
     </ClCompile>
-    <ClCompile Include="ext\freetype-gl\vertex-attribute.c">
-      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
-    </ClCompile>
-    <ClCompile Include="ext\freetype-gl\vertex-buffer.c">
-      <Filter>Kaynak Dosyaları\ext\freetype-gl</Filter>
+    <ClCompile Include="src\graphics\label.cpp">
+      <Filter>Kaynak Dosyalar</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -587,19 +569,7 @@
     <ClInclude Include="ext\freetype\include\freetype\tttags.h">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
-    <ClInclude Include="ext\freetype-gl\distance-field.h">
-      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
-    </ClInclude>
-    <ClInclude Include="ext\freetype-gl\edtaa3func.h">
-      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
-    </ClInclude>
-    <ClInclude Include="ext\freetype-gl\font-manager.h">
-      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
-    </ClInclude>
     <ClInclude Include="ext\freetype-gl\freetype-gl.h">
-      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
-    </ClInclude>
-    <ClInclude Include="ext\freetype-gl\markup.h">
       <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
     </ClInclude>
     <ClInclude Include="ext\freetype-gl\opengl.h">
@@ -608,16 +578,10 @@
     <ClInclude Include="ext\freetype-gl\platform.h">
       <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
     </ClInclude>
-    <ClInclude Include="ext\freetype-gl\text-buffer.h">
-      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
-    </ClInclude>
     <ClInclude Include="ext\freetype-gl\texture-atlas.h">
       <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
     </ClInclude>
     <ClInclude Include="ext\freetype-gl\texture-font.h">
-      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
-    </ClInclude>
-    <ClInclude Include="ext\freetype-gl\utf8-utils.h">
       <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
     </ClInclude>
     <ClInclude Include="ext\freetype-gl\vec234.h">
@@ -626,11 +590,8 @@
     <ClInclude Include="ext\freetype-gl\vector.h">
       <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
     </ClInclude>
-    <ClInclude Include="ext\freetype-gl\vertex-attribute.h">
-      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
-    </ClInclude>
-    <ClInclude Include="ext\freetype-gl\vertex-buffer.h">
-      <Filter>Üst Bilgi Dosyaları\ext\freetype-gl</Filter>
+    <ClInclude Include="src\graphics\label.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
