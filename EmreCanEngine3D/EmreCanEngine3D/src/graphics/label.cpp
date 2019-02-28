@@ -9,10 +9,10 @@ namespace EmreCan3D
 			, m_Text("")
 		{
 			m_Position = maths::vec3(0, 0, 0);
-			m_Color = maths::vec4(0, 0, 0, 1);
+			m_Color = 0x000000ff;
 			m_FontSize = 20; //TODO: Find better one
 		}
-		Label::Label(const std::string & text, float x, float y, unsigned int fontSize, const maths::vec4 & color)
+		Label::Label(const std::string & text, float x, float y, unsigned int fontSize, unsigned int color)
 			: Renderable2D()
 			, m_Text(text)
 		{

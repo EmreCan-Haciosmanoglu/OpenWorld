@@ -9,7 +9,7 @@ namespace EmreCan3D
 		{
 		public:
 			Label();
-			Label(const std::string& text, float x, float y, unsigned int fontSize, const maths::vec4& color);
+			Label(const std::string& text, float x, float y, unsigned int fontSize, unsigned int color);
 
 			void submit(Renderer2D* renderer) const override;
 		private:
