@@ -9,7 +9,6 @@ namespace EmreCan3D
 		double Window::m_MouseX;
 		double Window::m_MouseY;
 
-		void window_resize(GLFWwindow *window, int width, int height);
 
 		Window::Window(const char * title, int width, int height)
 		{
@@ -73,7 +72,7 @@ namespace EmreCan3D
 			}
 			glfwMakeContextCurrent(m_Window);
 			glfwSetWindowUserPointer(m_Window, this);
-			glfwSetWindowSizeCallback(m_Window, window_resize);
+			glfwSetFramebufferSizeCallback(m_Window, window_resize);
 			glfwSetKeyCallback(m_Window, key_callback);
 			glfwSetMouseButtonCallback(m_Window, mouse_button_callback);
 			glfwSetCursorPosCallback(m_Window, cursor_position_callback);
@@ -109,9 +108,12 @@ namespace EmreCan3D
 			Window::m_MouseY = ypos;
 		}
 
-		void window_resize(GLFWwindow *window, int width, int height)
+		void Window::window_resize(GLFWwindow *window, int width, int height)
 		{
 			glViewport(0, 0, width, height);
+			Window* win = (Window*)glfwGetWindowUserPointer(window);
+			win->m_Width = width;
+			win->m_Height = height;
 		}
 	}
 }
