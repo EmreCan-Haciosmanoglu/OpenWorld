@@ -21,20 +21,16 @@ namespace EmreCan3D
 			m_Title = title;
 			m_Width = width;
 			m_Height = height;
-			if(!init())
+
+			if (!init())
 				glfwTerminate();
-			for (bool key : Window::m_Keys)
-				key = false;
-			for (bool key : Window::m_KeyState)
-				key = false;
-			for (bool key : Window::m_KeyTyped)
-				key = false;
-			for (bool button : Window::m_MouseButtons)
-				button = false;
-			for (bool button : Window::m_MouseButtonState)
-				button = false;
-			for (bool button : Window::m_MouseButtonTyped)
-				button = false;
+
+			memset(m_Keys,				0, MAX_KEYS		* sizeof(bool));
+			memset(m_KeyState,			0, MAX_KEYS		* sizeof(bool));
+			memset(m_KeyTyped,			0, MAX_KEYS		* sizeof(bool));
+			memset(m_MouseButtons,		0, MAX_BUTTONS	* sizeof(bool));
+			memset(m_MouseButtonState,	0, MAX_BUTTONS	* sizeof(bool));
+			memset(m_MouseButtonTyped,	0, MAX_BUTTONS	* sizeof(bool));
 		}
 		Window::~Window()
 		{
@@ -52,15 +48,13 @@ namespace EmreCan3D
 		{
 			for (int i = 0; i < MAX_KEYS; i++)
 				m_KeyTyped[i] = m_Keys[i] && !m_KeyState[i];
-
-			for (int i = 0; i < MAX_KEYS; i++)
-				m_KeyState[i] = m_Keys[i];
-
 			for (int i = 0; i < MAX_BUTTONS; i++)
 				m_MouseButtonTyped[i] = m_MouseButtons[i] && !m_MouseButtonState[i];
 
-			for (int i = 0; i < MAX_BUTTONS; i++)
-				m_MouseButtonState[i] = m_MouseButtons[i];
+			memcpy(m_KeyState, m_Keys, MAX_KEYS * sizeof(bool));
+			memcpy(m_MouseButtonState, m_MouseButtons, MAX_BUTTONS * sizeof(bool));
+
+
 
 			GLenum error = glGetError();
 			if (error != GL_NO_ERROR)
@@ -98,7 +92,7 @@ namespace EmreCan3D
 				return false;
 			}
 
-			m_Window = glfwCreateWindow(m_Width, m_Height,m_Title, NULL,NULL);
+			m_Window = glfwCreateWindow(m_Width, m_Height, m_Title, NULL, NULL);
 			if (!m_Window)
 			{
 				std::cout << "Failed to create GLFW window!" << std::endl;
