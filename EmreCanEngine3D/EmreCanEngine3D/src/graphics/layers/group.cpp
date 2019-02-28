@@ -6,7 +6,11 @@ namespace EmreCan3D
 	{
 		Group::Group(const maths::mat4& transform)
 			:m_TransformationStack(transform)
+		{}
+		Group::~Group()
 		{
+			for (int i = 0; i < m_Renderables.size(); i++)
+				delete m_Renderables[i];
 		}
 		void Group::add(Renderable2D * renderable)
 		{
