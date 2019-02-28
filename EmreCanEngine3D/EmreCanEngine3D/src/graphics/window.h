@@ -15,7 +15,13 @@ namespace EmreCan3D
 		{
 		public:
 			static bool m_Keys[MAX_KEYS];
+			static bool m_KeyState[MAX_KEYS];
+			static bool m_KeyTyped[MAX_KEYS];
+
 			static bool m_MouseButtons[MAX_BUTTONS];
+			static bool m_MouseButtonState[MAX_BUTTONS];
+			static bool m_MouseButtonTyped[MAX_BUTTONS];
+
 			static double m_MouseX, m_MouseY;
 		private:
 			const char *m_Title;
@@ -35,7 +41,9 @@ namespace EmreCan3D
 			void getMousePosition(double &x, double &y);
 
 			static bool isKeyPressed(unsigned int keycode);
+			static bool isKeyTyped(unsigned int keycode);
 			static bool isMouseButtonPressed(unsigned int button);
+			static bool isMouseButtonTyped(unsigned int button);
 		private:
 			bool init();
 			static void window_resize(GLFWwindow *window, int width, int height);

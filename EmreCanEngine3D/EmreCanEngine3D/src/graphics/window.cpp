@@ -5,7 +5,13 @@ namespace EmreCan3D
 	namespace graphics
 	{
 		bool Window::m_Keys[MAX_KEYS];
+		bool Window::m_KeyState[MAX_KEYS];
+		bool Window::m_KeyTyped[MAX_KEYS];
+
 		bool Window::m_MouseButtons[MAX_BUTTONS];
+		bool Window::m_MouseButtonState[MAX_BUTTONS];
+		bool Window::m_MouseButtonTyped[MAX_BUTTONS];
+
 		double Window::m_MouseX;
 		double Window::m_MouseY;
 
@@ -19,7 +25,15 @@ namespace EmreCan3D
 				glfwTerminate();
 			for (bool key : Window::m_Keys)
 				key = false;
+			for (bool key : Window::m_KeyState)
+				key = false;
+			for (bool key : Window::m_KeyTyped)
+				key = false;
 			for (bool button : Window::m_MouseButtons)
+				button = false;
+			for (bool button : Window::m_MouseButtonState)
+				button = false;
+			for (bool button : Window::m_MouseButtonTyped)
 				button = false;
 		}
 		Window::~Window()
@@ -36,6 +50,18 @@ namespace EmreCan3D
 		}
 		void Window::update()
 		{
+			for (int i = 0; i < MAX_KEYS; i++)
+				m_KeyTyped[i] = m_Keys[i] && !m_KeyState[i];
+
+			for (int i = 0; i < MAX_KEYS; i++)
+				m_KeyState[i] = m_Keys[i];
+
+			for (int i = 0; i < MAX_BUTTONS; i++)
+				m_MouseButtonTyped[i] = m_MouseButtons[i] && !m_MouseButtonState[i];
+
+			for (int i = 0; i < MAX_BUTTONS; i++)
+				m_MouseButtonState[i] = m_MouseButtons[i];
+
 			GLenum error = glGetError();
 			if (error != GL_NO_ERROR)
 				std::cout << "OpenGl Error: " << error << std::endl;
@@ -52,9 +78,17 @@ namespace EmreCan3D
 		{
 			return (keycode < MAX_KEYS) ? Window::m_Keys[keycode] : /*TODO: Log this*/false;
 		}
+		bool Window::isKeyTyped(unsigned int keycode)
+		{
+			return (keycode < MAX_KEYS) ? Window::m_KeyTyped[keycode] : /*TODO: Log this*/false;
+		}
 		bool Window::isMouseButtonPressed(unsigned int button)
 		{
 			return (button < MAX_BUTTONS) ? Window::m_MouseButtons[button] : /*TODO: Log this*/false;
+		}
+		bool Window::isMouseButtonTyped(unsigned int button)
+		{
+			return (button < MAX_BUTTONS) ? Window::m_MouseButtonTyped[button] : /*TODO: Log this*/false;
 		}
 		bool Window::init()
 		{
