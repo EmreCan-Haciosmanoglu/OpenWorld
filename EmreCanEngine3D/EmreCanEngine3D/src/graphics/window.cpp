@@ -25,6 +25,8 @@ namespace EmreCan3D
 			if (!init())
 				glfwTerminate();
 
+			FontManager::add(new Font("Arial", "arial.ttf", 32));
+
 			memset(m_Keys,				0, MAX_KEYS		* sizeof(bool));
 			memset(m_KeyState,			0, MAX_KEYS		* sizeof(bool));
 			memset(m_KeyTyped,			0, MAX_KEYS		* sizeof(bool));

@@ -8,7 +8,7 @@
 *.sln.docstates
 
 # User-specific files (MonoDevelop/Xamarin Studio)
-*.userprefs
+#*.userprefs
 
 ## 	Build results
 # 	Change Later
@@ -85,11 +85,11 @@ ipch/
 *.VC.db
 *.VC.VC.opendb
 
-# Visual Studio profiler
-*.psess
-*.vsp
-*.vspx
-*.sap
+## Visual Studio profiler
+#*.psess
+#*.vsp
+#*.vspx
+#*.sap
 
 # TFS 2012 Local Workspace
 $tf/

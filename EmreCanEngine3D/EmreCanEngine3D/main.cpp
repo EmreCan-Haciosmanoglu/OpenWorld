@@ -16,6 +16,7 @@
 
 #include "src/graphics/texture.h"	
 #include "src/graphics/label.h"
+#include "src/graphics/font_manager.h"
 
 
 #include "src/graphics/layers/tilelayer.h"
@@ -54,9 +55,8 @@ int main()
 			layer1.add(new Sprite(x, y, 0.9f, 0.9f, rand() % 2 == 0 ? texture1 : texture2));
 		}
 	}
-	Font* font = new Font("Arial", "arial.ttf", 20);
 	Group* g = new Group(mat4::translate(vec3(-15.8f, 7.0f, 0.0f)));
-	Label* label = new Label("Hello!?!", 0.4f, 0.4f, font, 0xff000000);
+	Label* label = new Label("Hello!?!", 0.4f, 0.4f, FontManager::get("Arial"), 0xff000000);
 	g->add(new Sprite(0, 0, 5, 1.5f, 0xffffffff));
 	g->add(label);
 
@@ -98,6 +98,7 @@ int main()
 	}
 	delete texture1;
 	delete texture2;
+	FontManager::clear();
 	return 0;
 }
 #endif
