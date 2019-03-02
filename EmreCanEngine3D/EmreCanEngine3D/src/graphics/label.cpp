@@ -11,6 +11,11 @@ namespace EmreCan3D
 			m_Position = maths::vec3(0, 0, 0);
 			m_Color = 0x000000ff;
 		}
+		Label::Label(const std::string & text, float x, float y, unsigned int color)
+			: Renderable2D()
+			, m_Font(FontManager::get("Arial", 32))
+			, m_Text(text)
+		{}
 		Label::Label(const std::string & text, float x, float y, Font* font, unsigned int color)
 			: Renderable2D()
 			, m_Font(font)
