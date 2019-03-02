@@ -98,7 +98,6 @@ int main()
 	}
 	delete texture1;
 	delete texture2;
-	FontManager::clear();
 	return 0;
 }
 #endif
