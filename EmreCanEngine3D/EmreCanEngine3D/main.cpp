@@ -23,6 +23,9 @@
 
 #include "src/graphics/layers/group.h"
 
+#include "ext/gorilla-audio/ga.h"
+#include "ext/gorilla-audio/gau.h"
+
 #include <time.h>
 
 #if 1

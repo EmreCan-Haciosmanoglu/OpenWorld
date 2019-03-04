@@ -36,8 +36,8 @@ namespace EmreCan3D
 		}
 		Window::~Window()
 		{
-			glfwTerminate();
 			FontManager::clear();
+			glfwTerminate();
 		}
 		bool Window::closed() const
 		{
