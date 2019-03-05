@@ -197,6 +197,7 @@ struct ga_Handle {
   gc_Mutex* handleMutex;
   ga_SampleSource* sampleSrc;
   volatile gc_int32 finished;
+  void* sound;
 };
 
 /************/

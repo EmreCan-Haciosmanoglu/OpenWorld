@@ -23,7 +23,7 @@ namespace EmreCan3D
 					return font;
 			return nullptr;
 		}
-		void FontManager::clear()
+		void FontManager::clean()
 		{
 			for (int i = 0; i < m_Fonts.size(); i++)
 				delete m_Fonts[i]; 

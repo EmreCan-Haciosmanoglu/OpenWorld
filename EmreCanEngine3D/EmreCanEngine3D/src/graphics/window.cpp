@@ -26,6 +26,7 @@ namespace EmreCan3D
 				glfwTerminate();
 
 			FontManager::add(new Font("Arial", "arial.ttf", 32));
+			audio::SoundManager::init();
 
 			memset(m_Keys,				0, MAX_KEYS		* sizeof(bool));
 			memset(m_KeyState,			0, MAX_KEYS		* sizeof(bool));
@@ -36,8 +37,9 @@ namespace EmreCan3D
 		}
 		Window::~Window()
 		{
-			FontManager::clear();
 			glfwTerminate();
+			FontManager::clean();
+			audio::SoundManager::clean();
 		}
 		bool Window::closed() const
 		{

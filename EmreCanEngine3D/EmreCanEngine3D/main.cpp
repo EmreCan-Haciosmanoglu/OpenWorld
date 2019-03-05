@@ -17,14 +17,12 @@
 #include "src/graphics/texture.h"	
 #include "src/graphics/label.h"
 #include "src/graphics/font_manager.h"
+#include "src/audio/sound_manager.h"
 
 
 #include "src/graphics/layers/tilelayer.h"
 
 #include "src/graphics/layers/group.h"
-
-#include "ext/gorilla-audio/ga.h"
-#include "ext/gorilla-audio/gau.h"
 
 #include <time.h>
 
@@ -34,6 +32,7 @@ int main()
 	using namespace EmreCan3D;
 	using namespace graphics;
 	using namespace maths;
+	using namespace audio;
 
 	Window window("3D Game Engine", 960, 540);
 	//glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
@@ -74,6 +73,8 @@ int main()
 	shader.setUniform1iv("textures", texIDs, 10);
 	shader.setUniformMat4("pr_matrix", mat4::orthographic(-16, 16, -9, 9, -1, 1));
 
+	SoundManager::add(new Sound("test", "Evacuate.wav"));
+	SoundManager::get("test")->play();
 	Timer time;
 	float timer = 0.0f;
 	unsigned int frames = 0;
@@ -91,6 +92,7 @@ int main()
 			std::cout << '1' << std::endl;
 
 		window.update();
+		SoundManager::update();
 		frames++;
 		if (time.elapsed() - timer > 1.0f)
 		{
