@@ -8,19 +8,15 @@
 #include "src/graphics/buffers/vertexarray.h"
 
 #include "src/graphics/renderer2d.h"
-#include "src/graphics/simple2drenderer.h"
 #include "src/graphics/batchrenderer2d.h"
 
-#include "src/graphics/static_sprite.h"
 #include "src/graphics/sprite.h"
 
 #include "src/graphics/texture.h"	
 #include "src/graphics/label.h"
+#include "src/graphics/layers/layer.h"
 #include "src/graphics/font_manager.h"
 #include "src/audio/sound_manager.h"
-
-
-#include "src/graphics/layers/tilelayer.h"
 
 #include "src/graphics/layers/group.h"
 
@@ -29,7 +25,7 @@
 #if 1
 int main()
 {
-	using namespace EmreCan3D;
+	using namespace Can;
 	using namespace graphics;
 	using namespace maths;
 	using namespace audio;
@@ -43,8 +39,8 @@ int main()
 	Shader& shader = *s;
 	shader.enable();
 	shader.setUniform2f("light_pos", vec2(4.0f, 1.5f));
-
-	TileLayer layer1(&shader);
+	BatchRenderer2D* m_Renderer = new BatchRenderer2D();
+	Layer layer1(m_Renderer,&shader,mat4::orthographic(-16,16,-8,8,-1,1));
 
 	Texture* texture1 = new Texture("Test.png");
 	Texture* texture2 = new Texture("Test2.png");

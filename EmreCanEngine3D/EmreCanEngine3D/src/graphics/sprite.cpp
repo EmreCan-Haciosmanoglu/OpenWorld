@@ -1,6 +1,6 @@
 #include "sprite.h"
 
-namespace EmreCan3D
+namespace Can
 {
 	namespace graphics
 	{

@@ -1,4 +1,5 @@
 #pragma once
+
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -6,7 +7,7 @@
 #include "font_manager.h"
 #include "../audio/sound_manager.h"
 
-namespace EmreCan3D
+namespace Can
 {
 	namespace graphics
 	{
@@ -47,12 +48,14 @@ namespace EmreCan3D
 			static bool isKeyTyped(unsigned int keycode);
 			static bool isMouseButtonPressed(unsigned int button);
 			static bool isMouseButtonTyped(unsigned int button);
+
 		private:
 			bool init();
-			static void window_resize(GLFWwindow *window, int width, int height);
-			static void key_callback(GLFWwindow * window, int key, int scancode, int action, int mods);
-			static void mouse_button_callback(GLFWwindow * window, int button, int action, int mods);
-			static void cursor_position_callback(GLFWwindow * window, double xpos, double ypos);
+
+			friend void window_resize(GLFWwindow *window, int width, int height);
+			friend void key_callback(GLFWwindow * window, int key, int scancode, int action, int mods);
+			friend void mouse_button_callback(GLFWwindow * window, int button, int action, int mods);
+			friend void cursor_position_callback(GLFWwindow * window, double xpos, double ypos);
 		};
 	}
 }

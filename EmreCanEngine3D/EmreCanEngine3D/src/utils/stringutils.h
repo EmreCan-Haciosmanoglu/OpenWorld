@@ -1,10 +1,12 @@
 #pragma once
+
 #include <string>
 #include <sstream>
 #include <vector>
-namespace EmreCan3D
+
+namespace Can
 {
-	std::vector<std::string> string_split(const std::string& s, char delimeter)
+	static std::vector<std::string> string_split(const std::string& s, char delimeter)
 	{
 		std::vector<std::string> elements;
 		std::stringstream ss(s);

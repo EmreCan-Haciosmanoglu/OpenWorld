@@ -1,7 +1,7 @@
 ﻿#include "vec2.h"
 
 
-namespace EmreCan3D
+namespace Can
 {
 	namespace maths
 	{

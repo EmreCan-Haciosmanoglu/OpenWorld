@@ -6,7 +6,7 @@
 #include "../maths/maths.h"
 #include "../utils/fileutils.h"
 
-namespace EmreCan3D
+namespace Can
 {
 	namespace graphics
 	{

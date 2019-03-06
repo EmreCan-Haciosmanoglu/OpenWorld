@@ -3,7 +3,7 @@
 #include <GL/glew.h>
 #include <FreeImage.h>
 
-namespace EmreCan3D
+namespace Can
 {
 	static BYTE* load_image(const char* filename, GLsizei* width, GLsizei* height)
 	{

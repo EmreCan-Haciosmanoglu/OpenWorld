@@ -2,7 +2,7 @@
 #include <vector>
 #include "sound.h"
 
-namespace EmreCan3D
+namespace Can
 {
 	namespace audio
 	{

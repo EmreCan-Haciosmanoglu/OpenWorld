@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-namespace EmreCan3D
+namespace Can
 {
 	namespace maths
 	{

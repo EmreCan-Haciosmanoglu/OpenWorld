@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Windows.h>
-namespace EmreCan3D
+namespace Can
 {
 	class Timer
 	{

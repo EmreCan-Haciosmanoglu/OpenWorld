@@ -2,7 +2,7 @@
 #include <vector>
 #include "font.h"
 
-namespace EmreCan3D
+namespace Can
 {
 	namespace graphics
 	{

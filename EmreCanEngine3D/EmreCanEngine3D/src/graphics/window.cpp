@@ -1,6 +1,6 @@
 #include "window.h"
 
-namespace EmreCan3D
+namespace Can
 {
 	namespace graphics
 	{
@@ -14,7 +14,6 @@ namespace EmreCan3D
 
 		double Window::m_MouseX;
 		double Window::m_MouseY;
-
 
 		Window::Window(const char * title, int width, int height)
 		{
@@ -89,6 +88,29 @@ namespace EmreCan3D
 		{
 			return (button < MAX_BUTTONS) ? Window::m_MouseButtonTyped[button] : /*TODO: Log this*/false;
 		}
+		void key_callback(GLFWwindow * window, int key, int scancode, int action, int mods)
+		{
+			Window::m_Keys[key] = action != GLFW_RELEASE;
+		}
+
+		void mouse_button_callback(GLFWwindow * window, int button, int action, int mods)
+		{
+			Window::m_MouseButtons[button] = action != GLFW_RELEASE;
+		}
+
+		void cursor_position_callback(GLFWwindow * window, double xpos, double ypos)
+		{
+			Window::m_MouseX = xpos;
+			Window::m_MouseY = ypos;
+		}
+
+		void window_resize(GLFWwindow *window, int width, int height)
+		{
+			glViewport(0, 0, width, height);
+			Window* win = (Window*)glfwGetWindowUserPointer(window);
+			win->m_Width = width;
+			win->m_Height = height;
+		}
 		bool Window::init()
 		{
 			if (!glfwInit())
@@ -125,28 +147,5 @@ namespace EmreCan3D
 			return true;
 		}
 
-		void Window::key_callback(GLFWwindow * window, int key, int scancode, int action, int mods)
-		{
-			Window::m_Keys[key] = action != GLFW_RELEASE;
-		}
-
-		void Window::mouse_button_callback(GLFWwindow * window, int button, int action, int mods)
-		{
-			Window::m_MouseButtons[button] = action != GLFW_RELEASE;
-		}
-
-		void Window::cursor_position_callback(GLFWwindow * window, double xpos, double ypos)
-		{
-			Window::m_MouseX = xpos;
-			Window::m_MouseY = ypos;
-		}
-
-		void Window::window_resize(GLFWwindow *window, int width, int height)
-		{
-			glViewport(0, 0, width, height);
-			Window* win = (Window*)glfwGetWindowUserPointer(window);
-			win->m_Width = width;
-			win->m_Height = height;
-		}
 	}
 }

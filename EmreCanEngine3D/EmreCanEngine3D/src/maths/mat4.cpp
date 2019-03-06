@@ -2,7 +2,7 @@
 #include "maths.h"
 #define LENGTH 4*4
 
-namespace EmreCan3D
+namespace Can
 {
 	namespace maths
 	{

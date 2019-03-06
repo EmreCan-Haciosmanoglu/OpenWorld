@@ -2,7 +2,7 @@
 
 #include<string>
 
-namespace EmreCan3D
+namespace Can
 {
 	static std::string read_file(const char *filepath)
 	{

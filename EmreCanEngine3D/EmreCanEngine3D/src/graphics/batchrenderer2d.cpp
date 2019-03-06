@@ -1,7 +1,7 @@
 #include "batchrenderer2d.h"
 //#include "renderable2d.h"
 
-namespace EmreCan3D
+namespace Can
 {
 	namespace graphics
 	{
@@ -43,7 +43,7 @@ namespace EmreCan3D
 				}
 				if (!found)
 				{
-					if (m_TextureSlots.size() >= 32)
+					if (m_TextureSlots.size() >= RENDERER_MAX_TEXTURES)
 					{
 						end();
 						flush();
@@ -99,13 +99,11 @@ namespace EmreCan3D
 			}
 			if (!found)
 			{
-				if (m_TextureSlots.size() >= 32)
+				if (m_TextureSlots.size() >= RENDERER_MAX_TEXTURES)
 				{
 					end();
 					flush();
 					begin();
-					//m_TextureSlots.empty();
-					//m_TextureSlots.clear();
 				}
 				m_TextureSlots.push_back(font.getID());
 				ts = (float)(m_TextureSlots.size());
@@ -189,6 +187,7 @@ namespace EmreCan3D
 			glBindVertexArray(0);
 
 			m_IndexCount = 0;
+			m_TextureSlots.clear();
 		}
 		void BatchRenderer2D::init()
 		{

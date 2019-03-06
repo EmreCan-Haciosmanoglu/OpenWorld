@@ -1,6 +1,6 @@
 # include "buffer.h"
 
-namespace EmreCan3D
+namespace Can
 {
 	namespace graphics
 	{

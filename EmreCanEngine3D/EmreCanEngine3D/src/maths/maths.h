@@ -5,7 +5,7 @@
 #include "vec4.h"
 #include "mat4.h"
 
-namespace EmreCan3D
+namespace Can
 {
 	namespace maths
 	{

@@ -2,7 +2,7 @@
 #include <GL/glew.h>
 
 
-namespace EmreCan3D
+namespace Can
 {
 	namespace graphics
 	{

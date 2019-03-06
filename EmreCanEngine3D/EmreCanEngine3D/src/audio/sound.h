@@ -8,7 +8,7 @@
 #include "../../ext/gorilla-audio/gau.h"
 #include "../../ext/gorilla-audio/ga.h"
 
-namespace EmreCan3D
+namespace Can
 {
 	namespace audio
 	{
@@ -30,6 +30,10 @@ namespace EmreCan3D
 			inline const bool  isPlaying() const { return m_Playing; }
 			inline const std::string& getName() const { return m_Name; }
 			inline const std::string& getFilename() const { return m_Filename; }
+			
+			friend void destroy_on_finish(ga_Handle* in_handle, void* in_context);
+			friend void loop_on_finish(ga_Handle* in_handle, void* in_context);
+
 		private:
 		public:
 		private:

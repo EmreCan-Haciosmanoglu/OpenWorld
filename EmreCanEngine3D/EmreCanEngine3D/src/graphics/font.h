@@ -3,7 +3,7 @@
 #include <string>
 #include "../../ext/freetype-gl/freetype-gl.h"
 
-namespace EmreCan3D
+namespace Can
 {
 	namespace graphics
 	{

@@ -9,7 +9,7 @@
 #include "../maths/maths.h"
 #include "shader.h"
 
-namespace EmreCan3D
+namespace Can
 {
 	namespace graphics
 	{

@@ -1,7 +1,7 @@
 #pragma once
 #include "renderable2d.h"
 #include "font_manager.h"
-namespace EmreCan3D
+namespace Can
 {
 	namespace graphics
 	{

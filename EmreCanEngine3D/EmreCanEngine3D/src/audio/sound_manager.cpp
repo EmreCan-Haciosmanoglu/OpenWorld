@@ -1,5 +1,5 @@
 #include "sound_manager.h"
-namespace EmreCan3D
+namespace Can
 {
 	namespace audio
 	{
