@@ -74,7 +74,6 @@ int main()
 	shader.setUniformMat4("pr_matrix", mat4::orthographic(-16, 16, -9, 9, -1, 1));
 
 	SoundManager::add(new Sound("test", "Evacuate.wav"));
-	SoundManager::get("test")->play();
 	Timer time;
 	float timer = 0.0f;
 	unsigned int frames = 0;
@@ -88,8 +87,14 @@ int main()
 		shader.setUniform2f("light_pos", vec2((float)(x * 32.0f / window.getWidth() - 16.0f), (float)(9.0f - y * 18.0f / window.getHeight())));
 		layer1.render();
 
-		if (Window::isMouseButtonTyped(GLFW_MOUSE_BUTTON_1))
-			std::cout << '1' << std::endl;
+		if (Window::isKeyTyped(GLFW_KEY_P))
+			SoundManager::get("test")->play();
+		if (Window::isKeyTyped(GLFW_KEY_S))
+			SoundManager::get("test")->pause();
+		if (Window::isKeyTyped(GLFW_KEY_A))
+			SoundManager::get("test")->resume();
+		if (Window::isKeyTyped(GLFW_KEY_D))
+			SoundManager::get("test")->stop();
 
 		window.update();
 		SoundManager::update();
