@@ -1,8 +1,13 @@
 #pragma once
 
 #include <string>
+#include <iostream>
+
+#include "../utils/stringutils.h"
+
 #include "../../ext/gorilla-audio/gau.h"
 #include "../../ext/gorilla-audio/ga.h"
+
 namespace EmreCan3D
 {
 	namespace audio

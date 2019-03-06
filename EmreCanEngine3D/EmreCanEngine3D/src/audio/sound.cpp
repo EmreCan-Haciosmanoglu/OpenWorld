@@ -14,7 +14,14 @@ namespace EmreCan3D
 			, m_Gain(0.5f)
 			, m_Playing(false)
 		{
-			m_Sound = gau_load_sound_file(filename.c_str(), "wav");
+			std::vector<std::string> result = string_split(filename.c_str(), '.');
+			if (result.size() < 2)
+			{
+				std::cout << "[Sound] Invalid filename = " << filename << "!" << std::endl;
+			}
+			m_Sound = gau_load_sound_file(filename.c_str(), result.back().c_str());
+			if(m_Sound == nullptr)
+				std::cout << "[Sound] Could not load file = " << filename << "!" << std::endl;
 		}
 		Sound::~Sound()
 		{
@@ -83,7 +90,7 @@ namespace EmreCan3D
 		{
 			Sound* sound = (Sound*)in_handle->sound;
 			sound->setPlaying(false);
-			sound->loop();	
+			sound->loop();
 
 			ga_handle_destroy(in_handle);
 		}
