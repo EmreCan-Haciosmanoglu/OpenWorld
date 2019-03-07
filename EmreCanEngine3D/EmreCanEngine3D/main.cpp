@@ -1,3 +1,4 @@
+#if 0
 #include "src/graphics/window.h"
 #include "src/graphics/shader.h"
 #include "src/maths/maths.h"
@@ -40,7 +41,7 @@ int main()
 	shader.enable();
 	shader.setUniform2f("light_pos", vec2(4.0f, 1.5f));
 	BatchRenderer2D* m_Renderer = new BatchRenderer2D();
-	Layer layer1(m_Renderer,&shader,mat4::orthographic(-16,16,-8,8,-1,1));
+	Layer layer1(m_Renderer, &shader, mat4::orthographic(-16, 16, -8, 8, -1, 1));
 
 	Texture* texture1 = new Texture("Test.png");
 	Texture* texture2 = new Texture("Test2.png");
@@ -107,3 +108,47 @@ int main()
 	return 0;
 }
 #endif
+#endif
+
+#include "src/Can.h"
+
+using namespace Can;
+using namespace graphics;
+using namespace maths;
+
+class Game : public Can
+{
+public:
+	Game()
+	{
+
+	}
+
+	~Game()
+	{
+		delete layer;
+	}
+
+	void init() override
+	{
+		window = createWindow("First Game v1.0", 960, 540);
+		layer = new Layer(new BatchRenderer2D(), new Shader("src/shaders/basic.vert", "src/shaders/basic.frag"), mat4::orthographic(-16, 16, -9, 9, -1, 1));
+		layer->add(new Sprite(-2, -1, 4, 2, new Texture("Test.png")));
+	}
+
+	void render() override
+	{
+		layer->render();
+	}
+private:
+	Window* window;
+	Layer* layer;
+};
+
+int main()
+{
+	Game game;
+
+	game.start();
+	return 0;
+}
