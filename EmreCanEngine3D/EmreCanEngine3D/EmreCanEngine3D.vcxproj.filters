@@ -654,4 +654,12 @@
       <Filter>Kaynak Dosyaları</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="arial.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Evacuate.wav">
+      <Filter>Kaynak Dosyaları</Filter>
+    </Media>
+  </ItemGroup>
 </Project>

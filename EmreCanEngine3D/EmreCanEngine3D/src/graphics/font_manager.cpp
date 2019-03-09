@@ -9,6 +9,10 @@ namespace Can
 		{
 			m_Fonts.push_back(font);
 		}
+		Font * FontManager::get()
+		{
+			return m_Fonts[0];
+		}
 		Font * FontManager::get(const std::string & name)
 		{
 			for (Font* font : m_Fonts)

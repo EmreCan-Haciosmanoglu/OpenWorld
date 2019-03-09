@@ -109,8 +109,7 @@ namespace Can
 				ts = (float)(m_TextureSlots.size());
 			}
 
-			float scaleX = 960.0f / 32.0f;
-			float scaleY = 540.0f / 18.0f;
+			const maths::vec2& sc = font.getScale();
 
 			float x = position.x;
 			float y = position.y;
@@ -123,13 +122,13 @@ namespace Can
 					if (i > 0)
 					{
 						float kerning = texture_glyph_get_kerning(glyph, text[i - 1]);
-						x += kerning / scaleX;
+						x += kerning / sc.x;
 					}
 
-					float x0 = x + glyph->offset_x / scaleX;
-					float y0 = position.y + glyph->offset_y / scaleY;
-					float x1 = x0 + glyph->width / scaleX;
-					float y1 = y0 - glyph->height / scaleY;
+					float x0 = x + glyph->offset_x / sc.x;
+					float y0 = position.y + glyph->offset_y / sc.y;
+					float x1 = x0 + glyph->width / sc.x;
+					float y1 = y0 - glyph->height / sc.y;
 
 					float s0 = glyph->s0;
 					float t0 = glyph->t0;
@@ -161,7 +160,7 @@ namespace Can
 					m_Buffer++;
 
 					m_IndexCount += 6;
-					x += glyph->advance_x / scaleX;
+					x += glyph->advance_x / sc.x;
 				}
 			}
 		}

@@ -44,10 +44,15 @@ namespace Can
 			}
 
 			virtual ~Renderable2D(){}
-			 
+
 			virtual void submit(Renderer2D* renderer) const
 			{
 				renderer->submit(this);
+			}
+
+			virtual void setPosition(maths::vec3 pos)
+			{
+				m_Position = pos;
 			}
 
 			void setColor(unsigned int color) { m_Color = color; }

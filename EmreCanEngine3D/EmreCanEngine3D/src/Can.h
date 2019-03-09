@@ -4,9 +4,10 @@
 
 #include "graphics/layers/layer.h"
 
-#include "graphics/window.h"
-#include "graphics/sprite.h"
 #include "graphics/batchrenderer2d.h"
+#include "graphics/label.h"
+#include "graphics/sprite.h"
+#include "graphics/window.h"
 
 #include "maths/maths.h"
 
@@ -73,12 +74,12 @@ namespace Can
 				m_Window->update();
 				if (m_Timer->elapsed() - timer > 1.0f)
 				{
-					tick();
 					timer += 1.0f;
 					m_FramesPerSecond = frames;
 					m_UpdatesPerSecond = updates;
 					frames = 0;
 					updates = 0;
+					tick();
 				}
 			}
 		}
