@@ -66,6 +66,7 @@ namespace Can
 				m_Window->clear();
 				if (m_Timer->elapsed() - updateTimer > updateTick)
 				{
+					m_Window->UpdateInput();
 					update();
 					updates++;
 					updateTimer += updateTick;
