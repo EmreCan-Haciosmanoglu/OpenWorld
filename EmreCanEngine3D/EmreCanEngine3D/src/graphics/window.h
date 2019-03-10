@@ -27,7 +27,7 @@ namespace Can
 			static bool m_MouseButtonState[MAX_BUTTONS];
 			static bool m_MouseButtonTyped[MAX_BUTTONS];
 
-			static maths::vec2 m_MousePosition;
+			maths::vec2 m_MousePosition;
 		private:
 			int m_Width, m_Height;
 			const char *m_Title;
@@ -40,11 +40,12 @@ namespace Can
 			void clear() const;
 			bool closed() const;
 			void update();
+			void UpdateInput();
 
 			inline int getWidth() const { return m_Width; }
 			inline int getHeight() const { return m_Height; }
+			inline const maths::vec2& getMousePosition() const { return m_MousePosition; }
 
-			const maths::vec2& getMousePosition(double &x, double &y);
 
 			static bool isKeyPressed(unsigned int keycode);
 			static bool isKeyTyped(unsigned int keycode);

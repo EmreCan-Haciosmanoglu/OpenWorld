@@ -12,7 +12,7 @@ namespace Can
 		bool Window::m_MouseButtonState[MAX_BUTTONS];
 		bool Window::m_MouseButtonTyped[MAX_BUTTONS];
 
-		maths::vec2 Window::m_MousePosition;
+		//maths::vec2 Window::m_MousePosition;
 
 		Window::Window(const char * title, int width, int height)
 			: m_Title(title)
@@ -49,16 +49,6 @@ namespace Can
 		}
 		void Window::update()
 		{
-			for (int i = 0; i < MAX_KEYS; i++)
-				m_KeyTyped[i] = m_Keys[i] && !m_KeyState[i];
-			for (int i = 0; i < MAX_BUTTONS; i++)
-				m_MouseButtonTyped[i] = m_MouseButtons[i] && !m_MouseButtonState[i];
-
-			memcpy(m_KeyState, m_Keys, MAX_KEYS * sizeof(bool));
-			memcpy(m_MouseButtonState, m_MouseButtons, MAX_BUTTONS * sizeof(bool));
-
-
-
 			GLenum error = glGetError();
 			if (error != GL_NO_ERROR)
 				std::cout << "OpenGl Error: " << error << std::endl;
@@ -66,10 +56,15 @@ namespace Can
 			glfwPollEvents();
 			glfwSwapBuffers(m_Window);
 		}
-		void Window::getMousePosition(double & x, double & y)
+		void Window::UpdateInput()
 		{
-			x = m_MouseX;
-			y = m_MouseY;
+			for (int i = 0; i < MAX_KEYS; i++)
+				m_KeyTyped[i] = m_Keys[i] && !m_KeyState[i];
+			for (int i = 0; i < MAX_BUTTONS; i++)
+				m_MouseButtonTyped[i] = m_MouseButtons[i] && !m_MouseButtonState[i];
+
+			memcpy(m_KeyState, m_Keys, MAX_KEYS * sizeof(bool));
+			memcpy(m_MouseButtonState, m_MouseButtons, MAX_BUTTONS * sizeof(bool));
 		}
 		bool Window::isKeyPressed(unsigned int keycode)
 		{
@@ -99,8 +94,8 @@ namespace Can
 
 		void cursor_position_callback(GLFWwindow * window, double xpos, double ypos)
 		{
-			Window::m_MouseX = xpos;
-			Window::m_MouseY = ypos;
+			Window* win = (Window*)glfwGetWindowUserPointer(window);
+			win->m_MousePosition = maths::vec2(xpos, ypos);
 		}
 
 		void window_resize(GLFWwindow *window, int width, int height)
