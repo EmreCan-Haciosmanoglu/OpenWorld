@@ -12,6 +12,7 @@ namespace Can
 		}
 		Texture::~Texture()
 		{
+			glDeleteTextures(1, &m_TID);
 		}
 		void Texture::bind() const
 		{
