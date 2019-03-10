@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <iostream>
 #include <GL/glew.h>
 #include "../utils/imageload.h"
 #include <FreeImage.h> 
@@ -16,6 +17,7 @@ namespace Can
 			std::string m_Name;
 			GLuint m_TID;
 			GLsizei m_Width, m_Height;
+			unsigned int m_Bits;
 		public:
 			Texture(const std::string& name, const std::string& filename);
 			~Texture();
