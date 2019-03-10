@@ -2,7 +2,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		VertexArray::VertexArray()
 		{

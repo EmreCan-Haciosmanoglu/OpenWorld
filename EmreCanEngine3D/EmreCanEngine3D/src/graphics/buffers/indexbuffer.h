@@ -3,7 +3,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		class IndexBuffer
 		{

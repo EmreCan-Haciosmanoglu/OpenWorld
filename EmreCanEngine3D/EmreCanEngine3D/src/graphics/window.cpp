@@ -2,7 +2,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		bool Window::m_Keys[MAX_KEYS];
 		bool Window::m_KeyState[MAX_KEYS];

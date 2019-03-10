@@ -2,7 +2,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		Group::Group(const maths::mat4& transform)
 			:m_TransformationStack(transform)

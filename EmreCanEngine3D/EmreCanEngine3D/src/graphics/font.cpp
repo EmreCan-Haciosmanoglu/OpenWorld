@@ -2,7 +2,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		Font::Font(std::string name, std::string filename, unsigned int size)
 			:m_Name(name)

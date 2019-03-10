@@ -2,7 +2,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		Layer::Layer(Renderer2D * renderer, Shader * shader, maths::mat4 projectionMatrix)
 			:m_Renderer(renderer)

@@ -4,7 +4,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		class Group : public Renderable2D
 		{

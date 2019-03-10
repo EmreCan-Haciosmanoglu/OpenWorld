@@ -9,7 +9,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 
 #define MAX_KEYS	1024

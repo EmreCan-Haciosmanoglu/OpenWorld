@@ -4,7 +4,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		class Sprite : public Renderable2D
 		{

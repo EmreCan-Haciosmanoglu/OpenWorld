@@ -8,7 +8,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		class Renderable2D;
 		class Renderer2D

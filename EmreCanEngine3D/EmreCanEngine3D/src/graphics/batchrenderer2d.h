@@ -7,7 +7,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 
 #define RENDERER_MAX_SPRITES	60000

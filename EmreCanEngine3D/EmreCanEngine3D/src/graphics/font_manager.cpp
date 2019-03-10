@@ -2,7 +2,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		std::vector<Font*> FontManager::m_Fonts;
 		void FontManager::add(Font * font)

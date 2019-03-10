@@ -2,7 +2,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		Texture::Texture(const std::string & filename)
 			:m_FileName(filename)

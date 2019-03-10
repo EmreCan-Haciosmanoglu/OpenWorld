@@ -28,7 +28,7 @@
 int main()
 {
 	using namespace Can;
-	using namespace graphics;
+	using namespace Graphics;
 	using namespace maths;
 	using namespace audio;
 
@@ -114,7 +114,7 @@ int main()
 #include "src/Can.h"
 
 using namespace Can;
-using namespace graphics;
+using namespace Graphics;
 using namespace maths;
 
 class Game : public Can

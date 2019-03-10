@@ -407,6 +407,7 @@
     <ClInclude Include="src\graphics\shader.h" />
     <ClInclude Include="src\graphics\sprite.h" />
     <ClInclude Include="src\graphics\texture.h" />
+    <ClInclude Include="src\graphics\TextureManager.h" />
     <ClInclude Include="src\graphics\window.h" />
     <ClInclude Include="src\utils\fileutils.h" />
     <ClInclude Include="src\maths\mat4.h" />

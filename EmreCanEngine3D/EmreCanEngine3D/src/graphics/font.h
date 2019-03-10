@@ -6,7 +6,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		class Font
 		{

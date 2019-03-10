@@ -2,7 +2,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		Shader::Shader(const char * vertPath, const char * fragPath)
 			:m_VertPath(vertPath)

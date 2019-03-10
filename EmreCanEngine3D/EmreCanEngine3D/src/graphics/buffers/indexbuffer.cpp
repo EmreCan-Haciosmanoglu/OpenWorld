@@ -3,7 +3,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		IndexBuffer::IndexBuffer(GLushort * data, GLsizei count)
 			:m_Count(count)

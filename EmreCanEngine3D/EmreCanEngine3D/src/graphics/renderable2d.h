@@ -11,7 +11,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		struct VertexData
 		{

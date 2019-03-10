@@ -2,7 +2,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 
 		Sprite::Sprite(float x, float y, float width, float height, unsigned int color)

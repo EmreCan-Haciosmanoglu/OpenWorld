@@ -2,7 +2,7 @@
 
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		Buffer::Buffer(GLfloat * data, GLsizei count, GLuint componentCount)
 			:m_ComponentCount(componentCount)

@@ -3,7 +3,7 @@
 #include "font_manager.h"
 namespace Can
 {
-	namespace graphics
+	namespace Graphics
 	{
 		class Label :public Renderable2D
 		{
