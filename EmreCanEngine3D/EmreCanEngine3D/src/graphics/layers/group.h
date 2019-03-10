@@ -10,12 +10,13 @@ namespace Can
 		{
 		private:
 			std::vector<Renderable2D*> m_Renderables;
-			maths::mat4 m_TransformationStack;
+			maths::mat4 m_TransformationMatrix;
 		public:
 			Group(const maths::mat4& transform);
 			~Group();
 			void add(Renderable2D* renderable);
 			void submit(Renderer2D* renderer) const override;
+			maths::mat4& getTransformRef() { return m_TransformationMatrix; }
 		};
 	}
 }
