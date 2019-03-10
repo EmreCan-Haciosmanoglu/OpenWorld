@@ -8,6 +8,7 @@
 #include "graphics/label.h"
 #include "graphics/sprite.h"
 #include "graphics/window.h"
+#include "graphics/TextureManager.h"
 
 #include "maths/maths.h"
 
@@ -38,9 +39,9 @@ namespace Can
 			delete m_Timer;
 		}
 
-		graphics::Window* createWindow(const char *title, int width, int height)
+		Graphics::Window* createWindow(const char *title, int width, int height)
 		{
-			m_Window = new graphics::Window(title, width, height);
+			m_Window = new Graphics::Window(title, width, height);
 			return m_Window;
 		}
 
@@ -85,7 +86,7 @@ namespace Can
 		}
 	private:
 		Timer* m_Timer;
-		graphics::Window* m_Window;
+		Graphics::Window* m_Window;
 
 		unsigned int m_FramesPerSecond, m_UpdatesPerSecond;
 	};

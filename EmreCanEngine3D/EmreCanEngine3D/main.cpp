@@ -138,10 +138,14 @@ public:
 
 		shader = new Shader("src/shaders/basic.vert", "src/shaders/basic.frag");
 		//glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
+
 		FontManager::get()->setScale(window->getWidth() / 16.0f, window->getHeight() / 9.0f);
+		TextureManager::add(new Texture("Test", "Test.png"));
+
 		layer = new Layer(new BatchRenderer2D(), shader, mat4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
 		fps = new Label("", -15.5f, 8.2f, FontManager::get("Arial"), 0xffffffff);
-		sprite = new Sprite(-2, -1, 4, 2, new Texture("Test.png"));
+		sprite = new Sprite(-2, -1, 4, 2, TextureManager::get("Test"));
+
 		layer->add(fps);
 		layer->add(sprite);
 	}

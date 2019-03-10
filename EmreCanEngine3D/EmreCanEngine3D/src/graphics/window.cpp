@@ -12,15 +12,13 @@ namespace Can
 		bool Window::m_MouseButtonState[MAX_BUTTONS];
 		bool Window::m_MouseButtonTyped[MAX_BUTTONS];
 
-		double Window::m_MouseX;
-		double Window::m_MouseY;
+		maths::vec2 Window::m_MousePosition;
 
 		Window::Window(const char * title, int width, int height)
+			: m_Title(title)
+			,m_Width(width)
+			, m_Height(height)
 		{
-			m_Title = title;
-			m_Width = width;
-			m_Height = height;
-
 			if (!init())
 				glfwTerminate();
 
@@ -38,6 +36,7 @@ namespace Can
 		{
 			glfwTerminate();
 			FontManager::clean();
+			TextureManager::clean();
 			audio::SoundManager::clean();
 		}
 		bool Window::closed() const

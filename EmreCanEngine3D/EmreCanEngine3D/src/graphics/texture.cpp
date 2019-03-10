@@ -4,8 +4,9 @@ namespace Can
 {
 	namespace Graphics
 	{
-		Texture::Texture(const std::string & filename)
-			:m_FileName(filename)
+		Texture::Texture(const std::string& name, const std::string & filename)
+			: m_Name(name)
+			, m_FileName(filename)
 		{
 			m_TID = load();
 		}

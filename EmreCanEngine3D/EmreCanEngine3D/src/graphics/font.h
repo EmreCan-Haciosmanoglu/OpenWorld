@@ -23,14 +23,14 @@ namespace Can
 			inline const unsigned int getID() const { return m_FTAtlas->id; }
 			inline const maths::vec2& getScale() const { return m_Scale; }
 			inline const std::string& getName() const { return m_Name; }
-			inline const std::string& getFilename() const { return m_Filename; }
+			inline const std::string& getFileName() const { return m_FileName; }
 			inline const unsigned int getSize() const { return m_FontSize; }
 		private:
 			ftgl::texture_atlas_t* m_FTAtlas;
 			ftgl::texture_font_t* m_FTFont;
 
 			std::string m_Name;
-			std::string m_Filename;
+			std::string m_FileName;
 			unsigned int m_FontSize;
 			maths::vec2 m_Scale;
 		};

@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "font_manager.h"
+#include "TextureManager.h"
 #include "../audio/sound_manager.h"
 
 namespace Can
@@ -26,12 +27,13 @@ namespace Can
 			static bool m_MouseButtonState[MAX_BUTTONS];
 			static bool m_MouseButtonTyped[MAX_BUTTONS];
 
-			static double m_MouseX, m_MouseY;
+			static maths::vec2 m_MousePosition;
 		private:
-			const char *m_Title;
 			int m_Width, m_Height;
-			GLFWwindow *m_Window;
+			const char *m_Title;
 			bool m_Closed;
+
+			GLFWwindow *m_Window;
 		public:
 			Window(const char *title, int width, int height);
 			~Window();
@@ -42,7 +44,7 @@ namespace Can
 			inline int getWidth() const { return m_Width; }
 			inline int getHeight() const { return m_Height; }
 
-			void getMousePosition(double &x, double &y);
+			const maths::vec2& getMousePosition(double &x, double &y);
 
 			static bool isKeyPressed(unsigned int keycode);
 			static bool isKeyTyped(unsigned int keycode);

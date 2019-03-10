@@ -5,10 +5,12 @@ namespace Can
 	namespace Graphics
 	{
 		std::vector<Font*> FontManager::m_Fonts;
+
 		void FontManager::add(Font * font)
 		{
 			m_Fonts.push_back(font);
 		}
+		
 		Font * FontManager::get()
 		{
 			return m_Fonts[0];
@@ -27,6 +29,7 @@ namespace Can
 					return font;
 			return nullptr;
 		}
+		
 		void FontManager::clean()
 		{
 			for (int i = 0; i < m_Fonts.size(); i++)
