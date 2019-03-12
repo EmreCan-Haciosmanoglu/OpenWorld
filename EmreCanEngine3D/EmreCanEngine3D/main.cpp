@@ -1,3 +1,4 @@
+#if 0
 #define INDEX 0
 #if INDEX
 #include "src/graphics/window.h"
@@ -187,4 +188,5 @@ int main()
 	game.start();
 	return 0;
 }
+#endif
 #endif

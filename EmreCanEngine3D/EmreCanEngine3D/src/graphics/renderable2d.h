@@ -58,10 +58,10 @@ namespace Can
 			void setColor(unsigned int color) { m_Color = color; }
 			void setColor(const maths::vec4& color)
 			{
-				int r = color.x * 255.0f;
-				int g = color.y * 255.0f;
-				int b = color.z * 255.0f;
-				int a = color.w * 255.0f;
+				int r = (int)(color.x * 255.0f);
+				int g = (int)(color.y * 255.0f);
+				int b = (int)(color.z * 255.0f);
+				int a = (int)(color.w * 255.0f);
 
 				m_Color = a << 24 | b << 16 | g << 8 | r;
 			}

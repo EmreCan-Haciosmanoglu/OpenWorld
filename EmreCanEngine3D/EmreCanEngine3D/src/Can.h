@@ -14,6 +14,11 @@
 
 #include "utils/timer.h"
 
+#define CAN_KEYSET_UP GLFW_KEY_UP
+#define CAN_KEYSET_DOWN GLFW_KEY_DOWN
+#define CAN_KEYSET_RIGHT GLFW_KEY_RIGHT
+#define CAN_KEYSET_LEFT GLFW_KEY_LEFT
+
 namespace Can
 {
 	class Can
