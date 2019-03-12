@@ -3,8 +3,8 @@
 #include <iostream>
 #include <vector>
 #include <GL/glew.h>
-#include "../maths/maths.h"
-#include "../utils/fileutils.h"
+#include "../../maths/maths.h"
+#include "../../utils/fileutils.h"
 
 namespace Can
 {
@@ -13,9 +13,15 @@ namespace Can
 		class Shader
 		{
 		private:
-			GLuint m_ShaderID;
-			const char *m_VertPath, *m_FragPath; //For Debug
+			const char* m_Name;
+			const char* m_VertPath;
+			const char* m_FragPath;
+			const char* m_VertSrc;
+			const char* m_FragSrc;
 		public:
+			GLuint m_ShaderID;
+		public:
+			Shader(const char* name, const char* vertSrc, const char* fragSrc);
 			Shader(const char * vertPath, const char *fragPath);
 			~Shader();
 
@@ -32,8 +38,12 @@ namespace Can
 			void enable() const;
 			void disable() const;
 		private:
-			GLuint load();
+			GLuint load(const char* vertSrc, const char* fragSrc);
 			GLint getUniformLocation(const GLchar *name);
+		public:
+			static Shader* FromFile(const char* vertPath, const char* fragPath);
+			static Shader* FromSource(const char* vertSrc, const char* fragSrc);
+			static Shader* FromSource(const char* name, const char* vertSrc, const char* fragSrc);
 		};
 	}
 }

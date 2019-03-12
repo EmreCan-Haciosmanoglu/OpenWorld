@@ -2,6 +2,7 @@
 
 #include "../renderable2d.h"
 #include "../renderer2d.h"
+#include <CustomTypes.h>
 
 namespace Can
 {
@@ -18,7 +19,8 @@ namespace Can
 		public:
 			Layer(Renderer2D* renderer,Shader* shader, maths::mat4 projectionMatrix);
 			virtual ~Layer();
-			virtual void add(Renderable2D* renderable);
+			virtual Renderable2D* add(Renderable2D* renderable);
+			inline void setMask(const Texture* mask) const { m_Renderer->setMask(mask); }
 			virtual void render();
 		};
 	}

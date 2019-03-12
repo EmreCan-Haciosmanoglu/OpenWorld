@@ -11,7 +11,7 @@ namespace Can
 		class Font
 		{
 		public:
-			Font(std::string name, std::string filename, unsigned int size);
+			Font(std::string name, std::string filename, float  size);
 
 			void setScale(float x, float y);
 
@@ -24,14 +24,14 @@ namespace Can
 			inline const maths::vec2& getScale() const { return m_Scale; }
 			inline const std::string& getName() const { return m_Name; }
 			inline const std::string& getFileName() const { return m_FileName; }
-			inline const unsigned int getSize() const { return m_FontSize; }
+			inline const float getSize() const { return m_FontSize; }
 		private:
 			ftgl::texture_atlas_t* m_FTAtlas;
 			ftgl::texture_font_t* m_FTFont;
 
 			std::string m_Name;
 			std::string m_FileName;
-			unsigned int m_FontSize;
+			float  m_FontSize;
 			maths::vec2 m_Scale;
 		};
 	}

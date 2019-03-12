@@ -4,6 +4,8 @@ namespace Can
 {
 	namespace Graphics
 	{
+		TextureWrap Texture::s_WrapMode = REPEAT;
+
 		Texture::Texture(const std::string& name, const std::string & filename)
 			: m_Name(name)
 			, m_FileName(filename)
@@ -31,6 +33,8 @@ namespace Can
 			glBindTexture(GL_TEXTURE_2D, result);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, (GLint)s_WrapMode);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, (GLint)s_WrapMode);
 
 			if (m_Bits != 24 && m_Bits != 32)
 				std::cout << "Error" << std::endl;// "SPARKY_ERROR("[Texture] Unsupported image bit - depth!(%d)", m_Bits);

@@ -4,6 +4,7 @@
 #include "renderer2d.h"
 #include "renderable2d.h"
 #include "buffers/indexbuffer.h"
+#include <CustomTypes.h>
 
 namespace Can
 {
@@ -15,7 +16,7 @@ namespace Can
 #define RENDERER_SPRITE_SIZE	RENDERER_VERTEX_SIZE * 4
 #define RENDERER_BUFFER_SIZE	RENDERER_SPRITE_SIZE * RENDERER_MAX_SPRITES
 #define RENDERER_INDICES_SIZE	RENDERER_MAX_SPRITES * 6
-#define RENDERER_MAX_TEXTURES	32
+#define RENDERER_MAX_TEXTURES	32 - 1
 
 #define SHADER_VERTEX_INDEX		0
 #define SHADER_UV_INDEX			1

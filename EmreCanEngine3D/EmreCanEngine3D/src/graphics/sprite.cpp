@@ -38,7 +38,7 @@ namespace Can
 			setColor(color);
 		}
 
-		void Sprite::SetUV(std::vector<maths::vec2> uv)
+		void Sprite::SetUV(const std::vector<maths::vec2>& uv)
 		{
 			m_UV = uv;
 		}

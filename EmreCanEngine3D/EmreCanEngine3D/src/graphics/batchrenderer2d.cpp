@@ -34,7 +34,7 @@ namespace Can
 			if (tid > 0)
 			{
 				bool found = false;
-				for (int i = 0; i < (int)(m_TextureSlots.size()); i++)
+				for (uint i = 0; i < m_TextureSlots.size(); i++)
 				{
 					if ((int)m_TextureSlots[i] == (int)tid)
 					{
@@ -90,7 +90,7 @@ namespace Can
 
 			float ts = 0.0f;
 			bool found = false;
-			for (int i = 0; i < (int)(m_TextureSlots.size()); i++)
+			for (uint i = 0; i < m_TextureSlots.size(); i++)
 			{
 				if (m_TextureSlots[i] == font.getID())
 				{
@@ -115,7 +115,7 @@ namespace Can
 
 			float x = position.x;
 			float y = position.y;
-			for (int i = 0; i < (int)(text.length()); i++)
+			for (uint i = 0; i < text.length(); i++)
 			{
 				char c = text.at(i);
 				texture_glyph_t* glyph = font.getGlyph(c);
@@ -173,11 +173,14 @@ namespace Can
 		}
 		void BatchRenderer2D::flush()
 		{
-			for (int i = 0; i < (int)(m_TextureSlots.size()); i++)
+			for (uint i = 0; i < m_TextureSlots.size(); i++)
 			{
 				glActiveTexture(GL_TEXTURE0 + i);
 				glBindTexture(GL_TEXTURE_2D, m_TextureSlots[i]);
 			}
+
+			glActiveTexture(GL_TEXTURE31);
+			m_Mask->bind();
 
 			glBindVertexArray(m_VAO);
 			m_IBO->bind();

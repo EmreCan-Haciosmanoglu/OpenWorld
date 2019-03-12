@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <GL/glew.h>
+#include <CustomTypes.h>
 
 #include "buffer.h"
 

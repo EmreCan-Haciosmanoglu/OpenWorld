@@ -15,7 +15,7 @@ namespace Can
 			Sprite(float x, float y, float width, float height, unsigned int color);
 			Sprite(float x, float y, float width, float height, const maths::vec4& color);
 
-			void SetUV(std::vector<maths::vec2> uv);
+			void SetUV(const std::vector<maths::vec2>& uv);
 		public:
 			maths::vec2& size;
 		};

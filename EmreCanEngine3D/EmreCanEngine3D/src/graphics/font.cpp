@@ -4,7 +4,7 @@ namespace Can
 {
 	namespace Graphics
 	{
-		Font::Font(std::string name, std::string filename, unsigned int size)
+		Font::Font(std::string name, std::string filename, float size)
 			: m_Name(name)
 			, m_FileName(filename)
 			, m_FontSize(size)

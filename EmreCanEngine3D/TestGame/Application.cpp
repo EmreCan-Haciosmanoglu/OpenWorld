@@ -23,7 +23,7 @@ public:
 	{
 		window = createWindow("First Game v1.0", 960, 540);
 
-		shader = new Shader("src/shaders/basic.vert", "src/shaders/basic.frag");
+		shader = ShaderFactory::DefaultShader();
 		//glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
 
 		FontManager::get()->setScale(window->getWidth() / 16.0f, window->getHeight() / 9.0f);
@@ -35,6 +35,12 @@ public:
 
 		layer->add(fps);
 		layer->add(sprite);
+
+		Texture::SetWrap(TextureWrap::CLAMP_TO_BORDER);
+		layer->setMask(new Texture("Mask", "res/mask.png"));
+
+		shader->enable();
+		shader->setUniformMat4("mask_matrix", maths::mat4::translate(mask));
 	}
 
 	void tick() override
@@ -65,6 +71,7 @@ private:
 	Sprite* sprite;
 	Layer* layer;
 	Label* fps;
+	vec3 mask;
 };
 
 int main()

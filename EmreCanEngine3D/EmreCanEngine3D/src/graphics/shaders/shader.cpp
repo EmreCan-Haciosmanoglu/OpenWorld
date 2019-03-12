@@ -4,11 +4,39 @@ namespace Can
 {
 	namespace Graphics
 	{
+		Shader::Shader(const char* name, const char* vertSrc, const char* fragSrc)
+			: m_Name(name)
+			, m_VertSrc(vertSrc)
+			, m_FragSrc(fragSrc)
+		{
+			m_ShaderID = load(m_VertSrc, m_FragSrc);
+		}
 		Shader::Shader(const char * vertPath, const char * fragPath)
-			:m_VertPath(vertPath)
+			: m_Name(vertPath)
+			, m_VertPath(vertPath)
 			, m_FragPath(fragPath)
 		{
-			m_ShaderID = load();
+			std::string vertSourceString = read_file(m_VertPath);
+			std::string fragSourceString = read_file(m_FragPath);
+
+			m_VertSrc = vertSourceString.c_str();
+			m_FragSrc = fragSourceString.c_str();
+			m_ShaderID = load(m_VertSrc, m_FragSrc);
+		}
+
+		Shader* Shader::FromFile(const char* vertPath, const char* fragPath)
+		{
+			return new Shader(vertPath, fragPath);
+		}
+
+		Shader* Shader::FromSource(const char* vertSrc, const char* fragSrc)
+		{
+			return new Shader(vertSrc, vertSrc, fragSrc);
+		}
+
+		Shader* Shader::FromSource(const char* name, const char* vertSrc, const char* fragSrc)
+		{
+			return new Shader(name, vertSrc, fragSrc);
 		}
 
 		Shader::~Shader()
@@ -18,7 +46,12 @@ namespace Can
 
 		GLint Shader::getUniformLocation(const GLchar * name)
 		{
-			return glGetUniformLocation(m_ShaderID, name);
+			GLint result = glGetUniformLocation(m_ShaderID, name);
+			if (result == -1)
+				std::cout << m_Name << ": could not find uniform " << name << " in shader!" << std::endl;
+			//SPARKY_ERROR(m_Name, ": could not find uniform ", name, " in shader!");
+
+			return result;
 		}
 
 		void Shader::setUniform1f(const GLchar * name, float value)
@@ -38,7 +71,7 @@ namespace Can
 
 		void Shader::setUniform1iv(const GLchar * name, int *value, int count)
 		{
-			glUniform1iv(getUniformLocation(name),count, value);
+			glUniform1iv(getUniformLocation(name), count, value);
 		}
 
 		void Shader::setUniform2f(const GLchar * name, const maths::vec2 & vector)
@@ -70,19 +103,13 @@ namespace Can
 		{
 			glUseProgram(0);
 		}
-		GLuint Shader::load()
+		GLuint Shader::load(const char* vertSrc, const char* fragSrc)
 		{
 			GLuint program = glCreateProgram();
 			GLuint vertex = glCreateShader(GL_VERTEX_SHADER);
 			GLuint fragment = glCreateShader(GL_FRAGMENT_SHADER);
 
-			std::string vertSourceString = read_file(m_VertPath);
-			std::string fragSourceString = read_file(m_FragPath);
-
-			const char *vertSource = vertSourceString.c_str();
-			const char *fragSource = fragSourceString.c_str();
-
-			glShaderSource(vertex, 1, &vertSource, NULL);
+			glShaderSource(vertex, 1, &vertSrc, NULL);
 			glCompileShader(vertex);
 
 			GLint result;
@@ -99,7 +126,7 @@ namespace Can
 				return 0;
 			}
 
-			glShaderSource(fragment, 1, &fragSource, NULL);
+			glShaderSource(fragment, 1, &fragSrc, NULL);
 			glCompileShader(fragment);
 
 			glGetShaderiv(fragment, GL_COMPILE_STATUS, &result);

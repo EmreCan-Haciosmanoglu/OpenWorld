@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "font.h"
+#include <CustomTypes.h>
 
 namespace Can
 {

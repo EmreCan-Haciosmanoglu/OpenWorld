@@ -3,6 +3,7 @@
 #include <vector>
 #include <GL/glew.h>
 #include "font.h"
+#include "texture.h"
 #include "../maths/maths.h"
 
 
@@ -16,6 +17,7 @@ namespace Can
 		protected:
 			std::vector<maths::mat4> m_TransformationStack;
 			const maths::mat4* m_TransformationBack;
+			const Texture* m_Mask;
 		protected:
 			Renderer2D()
 			{
@@ -39,6 +41,7 @@ namespace Can
 					m_TransformationBack = &m_TransformationStack.back();
 				}
 			}
+			virtual void setMask(const Texture* mask) { m_Mask = mask; }
 
 			virtual void begin() {}
 			virtual void submit(const Renderable2D* renderable) = 0;

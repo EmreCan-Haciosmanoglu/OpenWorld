@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <CustomTypes.h>
 #include "texture.h"
 
 namespace Can
