@@ -1,0 +1,3 @@
+[submodule "Can/Can/vendor/spdlog"]
+	path = Can/Can/vendor/spdlog
+	url = https://github.com/gabime/spdlog
