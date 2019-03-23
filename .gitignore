@@ -6,3 +6,6 @@ bin-int/
 *.ipdb
 *.exp
 *.pdb
+#ProjectFiles
+*.sln
+*.vcxproj
