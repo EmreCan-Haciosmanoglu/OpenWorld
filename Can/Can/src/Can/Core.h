@@ -8,3 +8,5 @@
 #else
 	#error Can Only supports Windows!
 #endif // CAN_PLATFORM_WINDOWS
+
+#define BIT(x) (1 << x)
