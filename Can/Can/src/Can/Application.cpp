@@ -21,6 +21,23 @@ namespace Can
 		Event::EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<Event::WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowClose));
 		CAN_CORE_INFO("{0}", e);
+
+		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
+		{
+			(*--it)->OnEvent(e);
+			if (e.m_Handled)
+				break;
+		}
+	}
+
+	void Application::PushLayer(Layer::Layer * layer)
+	{
+		m_LayerStack.PushLayer(layer);
+	}
+
+	void Application::PushOverlay(Layer::Layer * overlay)
+	{
+		m_LayerStack.PushOverlay(overlay);
 	}
 
 	bool Application::OnWindowClose(Event::WindowCloseEvent& e)
@@ -33,6 +50,10 @@ namespace Can
 	{
 		while (m_Running)
 		{
+			for (Layer::Layer* layer : m_LayerStack)
+				if(layer->m_Enabled)
+					layer->OnUpdate();
+
 			m_Window->OnUpdate();
 		}
 	}

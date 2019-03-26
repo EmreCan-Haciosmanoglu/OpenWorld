@@ -54,14 +54,17 @@ project "SandBox"
 		
 	filter "configurations:Debug"
 		defines "CAN_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 		
 	filter "configurations:Release"
 		defines "CAN_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 		
 	filter "configurations:Dist"
 		defines "CAN_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Can"
@@ -114,12 +117,15 @@ project "Can"
 			"CAN_DEBUG",
 			"CAN_ENABLED_ASSERTS"
 		}
+		buildoptions "/MDd"
 		symbols "On"
 		
 	filter "configurations:Release"
 		defines "CAN_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 		
 	filter "configurations:Dist"
 		defines "CAN_DIST"
+		buildoptions "/MD"
 		optimize "On"

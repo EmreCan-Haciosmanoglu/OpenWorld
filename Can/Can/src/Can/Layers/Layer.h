@@ -19,5 +19,7 @@ namespace Can::Layer
 		inline const std::string& GetName() const { return m_DebugName; }
 	protected:
 		std::string m_DebugName;
+	public:
+		bool m_Enabled;
 	};
 }
