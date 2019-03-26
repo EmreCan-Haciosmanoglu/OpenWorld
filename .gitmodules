@@ -1,3 +1,6 @@
 [submodule "Can/Can/vendor/spdlog"]
 	path = Can/Can/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Can/Can/vendor/GLFW"]
+	path = Can/Can/vendor/GLFW
+	url = https://github.com/EmreCan-Haciosmanoglu/glfw
