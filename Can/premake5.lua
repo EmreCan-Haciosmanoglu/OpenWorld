@@ -109,7 +109,11 @@ project "Can"
 		}
 		
 	filter "configurations:Debug"
-		defines "CAN_DEBUG"
+		defines 
+		{
+			"CAN_DEBUG",
+			"CAN_ENABLED_ASSERTS"
+		}
 		symbols "On"
 		
 	filter "configurations:Release"
