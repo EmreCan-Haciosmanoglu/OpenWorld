@@ -10,6 +10,12 @@ workspace "Can"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Can/vendor/GLFW/include"
+
+include "Can/vendor/GLFW"
+
 project "SandBox"
 	location "SandBox"
 	kind "ConsoleApp"
@@ -75,7 +81,14 @@ project "Can"
 	includedirs
 	{
 		"%{prj.name}/vendor/spdlog/include",
-		"%{prj.name}/src"
+		"%{prj.name}/src",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links 
+	{ 
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
