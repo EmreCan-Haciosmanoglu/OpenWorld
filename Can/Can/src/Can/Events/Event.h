@@ -76,5 +76,6 @@ namespace Can::Event
 	{
 		return os << e.ToString();
 	}
+
 }
 	

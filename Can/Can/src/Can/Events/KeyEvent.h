@@ -18,7 +18,7 @@ namespace Can::Event
 		int m_KeyCode;
 	};
 
-	class CAN_API KeyPressedEvent : KeyEvent
+	class CAN_API KeyPressedEvent : public KeyEvent
 	{
 	public:
 		KeyPressedEvent(int keycode,int repeatCount)
