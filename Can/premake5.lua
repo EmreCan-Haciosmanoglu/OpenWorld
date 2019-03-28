@@ -13,8 +13,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Can/vendor/GLFW/include"
+IncludeDir["Glad"] = "Can/vendor/Glad/include"
+IncludeDir["imgui"] = "Can/vendor/imgui"
 
 include "Can/vendor/GLFW"
+include "Can/vendor/Glad"
+include "Can/vendor/imgui"
 
 project "SandBox"
 	location "SandBox"
@@ -85,12 +89,16 @@ project "Can"
 	{
 		"%{prj.name}/vendor/spdlog/include",
 		"%{prj.name}/src",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.imgui}"
 	}
 
 	links 
 	{ 
 		"GLFW",
+		"Glad",
+		"imgui",
 		"opengl32.lib"
 	}
 
@@ -101,9 +109,10 @@ project "Can"
 
 		defines
 		{
-			"CAN_BUILD_DLL",
 			"CAN_PLATFORM_WINDOWS",
-			"_WINDLL"
+			"CAN_BUILD_DLL",
+			"_WINDLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

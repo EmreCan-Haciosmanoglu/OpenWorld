@@ -1,6 +1,8 @@
 #include "Application.h"
 #include "Can/Log.h"
 
+#include <glad/glad.h>
+
 namespace Can
 {
 #define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)

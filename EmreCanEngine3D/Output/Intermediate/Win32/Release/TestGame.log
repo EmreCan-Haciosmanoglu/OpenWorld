@@ -1,0 +1,11 @@
+﻿  Application.cpp
+libvorbis.lib(vorbisfile.obj) : warning LNK4075: '/EDITANDCONTINUE' belirtimi nedeniyle '/OPT:ICF' yoksayılıyor
+MSVCRT.lib(initializers.obj) : warning LNK4098: defaultlib 'msvcrtd.lib' diğer kitaplıkların kullanımı ile çakışıyor; /NODEFAULTLIB:library kullanın
+MSVCRT.lib(initializers.obj) : warning LNK4098: defaultlib 'libcmt.lib' diğer kitaplıkların kullanımı ile çakışıyor; /NODEFAULTLIB:library kullanın
+  Kod üretiliyor
+  0 of 2182 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Kodun üretilmesi tamamlandı
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb', 'glew32s.lib(glew.obj)' ile veya 'C:\Users\darko\source\repos\EmreCan-Haciosmanoglu\OpenWorld\EmreCanEngine3D\Output\Game\Win32\Release\vc120.pdb' üzerinde bulunamadı; nesne, hata ayıklama bilgileri yokmuş gibi bağlanıyor
+  TestGame.vcxproj -> C:\Users\darko\source\repos\EmreCan-Haciosmanoglu\OpenWorld\EmreCanEngine3D\Output\Game\Win32\Release\TestGame.exe

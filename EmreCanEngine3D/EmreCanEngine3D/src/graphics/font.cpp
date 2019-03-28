@@ -17,5 +17,6 @@ namespace Can
 		{
 			m_Scale = maths::vec2(x, y);	
 		}
+
 	}
 }
