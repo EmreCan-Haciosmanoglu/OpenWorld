@@ -17,5 +17,5 @@
 	#define CAN_CORE_ASSERT(x,...)
 #endif // CAN_ENABLED_ASSERTS
 
-
+#define CAN_BIND_EVENT_FN(fn) std::bind(&fn, this,std::placeholders::_1)
 #define BIT(x) (1 << x)

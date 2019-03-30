@@ -59,6 +59,8 @@ namespace Can
 	{
 		while (m_Running)
 		{
+			glClear(GL_COLOR_BUFFER_BIT);
+
 			for (Layer::Layer* layer : m_LayerStack)
 				if(layer->m_Enabled)
 					layer->OnUpdate();
