@@ -7,6 +7,7 @@ workspace "Can"
 		"Release",
 		"Dist"
 	}
+startproject "SandBox"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
@@ -16,14 +17,18 @@ IncludeDir["GLFW"] = "Can/vendor/GLFW/include"
 IncludeDir["Glad"] = "Can/vendor/Glad/include"
 IncludeDir["imgui"] = "Can/vendor/imgui"
 
-include "Can/vendor/GLFW"
-include "Can/vendor/Glad"
-include "Can/vendor/imgui"
+group "Dependencies"
+	include "Can/vendor/GLFW"
+	include "Can/vendor/Glad"
+	include "Can/vendor/imgui"
+
+group ""
 
 project "SandBox"
 	location "SandBox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -47,7 +52,6 @@ project "SandBox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -58,23 +62,24 @@ project "SandBox"
 		
 	filter "configurations:Debug"
 		defines "CAN_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 		
 	filter "configurations:Release"
 		defines "CAN_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 		
 	filter "configurations:Dist"
 		defines "CAN_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 project "Can"
 	location "Can"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -104,7 +109,6 @@ project "Can"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -126,15 +130,15 @@ project "Can"
 			"CAN_DEBUG",
 			"CAN_ENABLED_ASSERTS"
 		}
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 		
 	filter "configurations:Release"
 		defines "CAN_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 		
 	filter "configurations:Dist"
 		defines "CAN_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
