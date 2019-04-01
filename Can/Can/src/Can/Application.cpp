@@ -1,5 +1,7 @@
 #include "Application.h"
+
 #include "Can/Log.h"
+#include "Can/Input.h"
 
 #include <glad/glad.h>
 
@@ -64,6 +66,10 @@ namespace Can
 			for (Layer::Layer* layer : m_LayerStack)
 				if(layer->m_Enabled)
 					layer->OnUpdate();
+
+			auto[x, y] = Input::GetMousePos();
+
+			CAN_CORE_TRACE("{0}, {1}", x, y);
 
 			m_Window->OnUpdate();
 		}
