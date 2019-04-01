@@ -12,7 +12,6 @@
 
 namespace Can::Layer
 {
-
 	class CAN_API ImGuiLayer : public Layer
 	{
 	public:
