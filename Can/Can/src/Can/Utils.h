@@ -6,7 +6,7 @@
 
 namespace Can
 {
-	static std::vector<std::string> string_split(const std::string& s, char delimeter)
+	static std::vector<std::string> StringSplit(const std::string& s, char delimeter)
 	{
 		std::vector<std::string> elements;
 		std::stringstream ss(s);

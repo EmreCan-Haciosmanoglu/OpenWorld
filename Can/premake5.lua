@@ -16,6 +16,8 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Can/vendor/GLFW/include"
 IncludeDir["Glad"] = "Can/vendor/Glad/include"
 IncludeDir["imgui"] = "Can/vendor/imgui"
+IncludeDir["glm"] = "Can/vendor/glm/glm"
+IncludeDir["ga"] = "Can/vendor/gorilla_audio"
 
 group "Dependencies"
 	include "Can/vendor/GLFW"
@@ -96,7 +98,9 @@ project "Can"
 		"%{prj.name}/src",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.imgui}"
+		"%{IncludeDir.imgui}",
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.ga}"
 	}
 
 	links 
