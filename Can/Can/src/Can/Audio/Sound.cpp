@@ -12,7 +12,7 @@ namespace Can::Audio
 		, m_Gain(0.5f)
 		, m_Playing(false)
 	{
-		std::vector<std::string> result = StringSplit(filename.c_str(), '.');
+		std::vector<std::string> result = string_split(filename.c_str(), '.');
 		if (result.size() < 2)
 		{
 			std::cout << "[Sound] Invalid filename = " << filename << "!" << std::endl;
@@ -80,15 +80,15 @@ namespace Can::Audio
 	void DestroyOnFinish(ga_Handle* in_handle, void* in_context)
 	{
 		Sound* sound = (Sound*)in_handle->sound;
-		sound->SetPlaying(false);
+		sound->setPlaying(false);
 
 		ga_handle_destroy(in_handle);
 	}
 	void LoopOnFinish(ga_Handle* in_handle, void* in_context)
 	{
 		Sound* sound = (Sound*)in_handle->sound;
-		sound->SetPlaying(false);
-		sound->Loop();
+		sound->setPlaying(false);
+		sound->loop();
 
 		ga_handle_destroy(in_handle);
 	}

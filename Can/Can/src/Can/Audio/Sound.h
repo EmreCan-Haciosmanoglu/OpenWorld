@@ -6,8 +6,8 @@
 #include "Can/Utils.h"
 #include "Can/Core.h"
 
-#include "../gorilla_audio/ga/gau.h"
-#include "../gorilla_audio/ga/ga.h"
+#include <gorilla-audio/gau.h>
+#include <gorilla-audio/ga.h>
 
 
 namespace Can::Audio
