@@ -1,3 +1,0 @@
-﻿lookup.obj : warning LNK4221: Bu nesne dosyas² ÷nceden tan²mlanmam²■ ortak sembolleri tan²mlamaz, bu nedenle bu kitapl²­² kullanan ba­lant² i■lemleri taraf²ndan kullan²lmayacak
-barkmel.obj : warning LNK4006: _main zaten tone.obj ³zerinde tan²mland²; ikinci tan²mlama yoksay²ld²
-  libvorbis.vcxproj -> C:\Users\darko\source\repos\EmreCan-Haciosmanoglu\OpenWorld\EmreCanEngine3D\Dependencies\libvorbis\bin\libvorbis.lib
